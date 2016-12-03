@@ -13,20 +13,16 @@ class Tracker {
     this.startY = y;
   }
 
-  public function getLocation() : Array<Int> {
-    return [x, y];
-  }
-
-  public function getStartLocation() : Array<Int> {
-    return [startX, startY];
-  }
-
   public function getDirection() : String {
     return this.compass;
   }
 
-  public function setDirection(compass:String) : Void {
-    this.compass = compass;
+  public function getLocation() : Array<Int> {
+    return [this.x, this.y];
+  }
+
+  public function getStartLocation() : Array<Int> {
+    return [this.startX, this.startY];
   }
 
   public function move(direction:String) : Void {
@@ -36,13 +32,13 @@ class Tracker {
 
     switch(this.compass) {
       case "N":
-        this.x += blocks;
-      case "S":
-        this.x -= blocks;
-      case "E":
         this.y += blocks;
-      case "W":
+      case "S":
         this.y -= blocks;
+      case "E":
+        this.x += blocks;
+      case "W":
+        this.x -= blocks;
       default:
     }
   }
@@ -81,13 +77,10 @@ class Tracker {
           newCompass = "S";
         }
       default:
-        trace("Default");
-        Sys.exit(0);
         newCompass = this.compass;
     }
 
-    this.setDirection(newCompass);
-
+    this.compass = newCompass;
   }
 
 }
