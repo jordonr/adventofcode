@@ -1,3 +1,4 @@
+package entities;
 
 class Tracker {
   private var startX:Int = 0;
@@ -40,6 +41,7 @@ class Tracker {
       case "W":
         this.x -= blocks;
       default:
+        trace("Not one of the four!");
     }
   }
 
@@ -82,5 +84,4 @@ class Tracker {
 
     this.compass = newCompass;
   }
-
 }
