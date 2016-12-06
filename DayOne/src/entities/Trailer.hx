@@ -32,7 +32,7 @@ class Trailer extends Tracker {
       }
 
       if(this.trail.indexOf(this.getLocation().toString()) > -1) {
-        trace('Visted Before: ' + this.getLocation().toString() + " | DistanceK: " + this.calcBlockDistance());
+        trace('Visted Before: ' + this.getLocation().toString() + " | Distance: " + this.calcBlockDistance());
         this.repeats.push(this.getLocation());
       }
 
