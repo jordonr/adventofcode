@@ -5,7 +5,7 @@ class BaseKeyPad {
   var move:Array<Int> = [0, 0];
   var momentum:Array<Int> = [0, 0];
   var keyCode:String = "";
-  var keypad:Array<Array<Int>> = [
+  var keypad:Array<Array<Dynamic>> = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
