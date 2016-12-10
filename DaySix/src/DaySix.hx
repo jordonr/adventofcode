@@ -13,7 +13,9 @@ class DaySix {
     input = sys.io.File.getContent(inputPath).trim();
 
     var eggs:Scramble = new Scramble(input);
+    var yoke:Sunny = new Sunny(input);
     trace(eggs.decode());
+    trace(yoke.decode());
 
   }
 }

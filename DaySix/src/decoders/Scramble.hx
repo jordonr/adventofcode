@@ -1,7 +1,5 @@
 package decoders;
 
-using StringTools;
-
 class Scramble {
   private var splitLine = ~/\n/g;
   private var lines:Array<String> = [];
