@@ -9,7 +9,7 @@ class Rows {
   private var lines:Array<String> = [];
   private var possible:Int = 0;
 
-  public function new(input) : Void{
+  public function new(input) : Void {
     lines = splitLine.split(input);
     possible = 0;
   }
@@ -35,7 +35,7 @@ class Rows {
 
     return possible;
   }
-  
+
   public function isTriangle(sides:Array<Int>) : Int {
     var addsUp = 0;
     if(sides[0] + sides[1] > sides[2]) {
@@ -45,7 +45,7 @@ class Rows {
 	    }
 	  }
     }
-  
+
     return addsUp;
   }
 
