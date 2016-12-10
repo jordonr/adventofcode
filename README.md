@@ -6,7 +6,7 @@ Status -
 * Day 01: 2 Stars
 * Day 02: 2 Stars
 * Day 03: 2 Stars
-* Day 04: 
+* Day 04: 2 Stars
 * Day 05: 
 * Day 06: 
 * Day 07: 

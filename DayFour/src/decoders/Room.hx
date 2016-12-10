@@ -7,6 +7,7 @@ class Room {
   private var lineTester = ~/([a-z\-]*)([0-9]+)\[([a-z]+)\]/; //aaaaa-bbb-z-y-x-123[abxyz] => (aaaaa-bbb-z-y-x-)(123)[(abxyz)]
   private var sectorTotal:Int = 0;
   private var lines:Array<String> = [];
+  private var alphabet:Array<String> = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
   public function new(input) : Void {
     lines = splitLine.split(input);
@@ -16,13 +17,42 @@ class Room {
   public function decode() : Int {
     for(line in lines) {
       lineTester.match(line);
-      var genCheck = this.genChecksum(lineTester.matched(1));
+      var genCheck:String = this.genChecksum(lineTester.matched(1));
       if(genCheck == lineTester.matched(3)) {
-        this.sectorTotal += Std.parseInt(lineTester.matched(2));
+        var sectorInt = Std.parseInt(lineTester.matched(2));
+        this.sectorTotal += sectorInt;
+        trace(sectorInt + " : " + lineTester.matched(1) + " > " + decryptName(lineTester.matched(1), sectorInt));
       }
     }
 
     return sectorTotal;
+  }
+
+  private function decryptName(roomCode:String, sector:Int) : String {
+    //var wr = ~/\W/g;
+    var newName:String = "";
+     
+    //roomCode = wr.replace(roomCode, " ");
+    for(c in 0...roomCode.length) {
+      newName = newName + shiftChar(roomCode.charCodeAt(c), sector);
+    }
+    
+    return newName;
+  }
+
+  private function shiftChar(toon:Int, sector:Int) {
+    var shift = sector % 26;
+    var toonIndex = toon - 97 + shift;
+
+    if(toonIndex > 25) {
+      toonIndex = toonIndex - 26;
+    }
+    
+    if(alphabet[toonIndex] == null) {
+      return " ";
+    }
+
+    return alphabet[toonIndex];
   }
 
   private function genChecksum(roomName:String) : String {
