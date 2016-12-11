@@ -13,7 +13,9 @@ class DaySeven {
     input = sys.io.File.getContent(inputPath).trim();
     
     var ips:IP7 = new IP7(input);
-    trace(ips.valid());
+    var ssl:SSL = new SSL(input);
+    //trace(ips.valid());
+    trace(ssl.valid());
     
   }
 }

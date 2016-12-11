@@ -9,7 +9,7 @@ Status -
 * Day 04: 2 Stars
 * Day 05: 2 Stars
 * Day 06: 2 Stars
-* Day 07: 
+* Day 07: 2 Stars
 * Day 08: 
 * Day 09: 
 * Day 10: 

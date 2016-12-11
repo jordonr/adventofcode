@@ -3,7 +3,6 @@ package parsers;
 using StringTools;
 
 class IP7 {
-  //private var getBrackets = ~/\[(\w+)\]/;
   private var splitLine = ~/\n/g;
   private var lines:Array<String> = [];
   private var totalValid:Int = 0;
@@ -61,6 +60,3 @@ class IP7 {
   }
   
 }
-
-  
-    
