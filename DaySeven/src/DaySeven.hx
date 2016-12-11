@@ -14,7 +14,7 @@ class DaySeven {
     
     var ips:IP7 = new IP7(input);
     var ssl:SSL = new SSL(input);
-    //trace(ips.valid());
+    trace(ips.valid());
     trace(ssl.valid());
     
   }
