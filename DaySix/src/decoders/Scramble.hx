@@ -31,7 +31,7 @@ class Scramble {
     return buildWord(letterCounts);
   }
 
-  private function buildWord(totals:Array<Map<String, Int>>) : String {
+  private function buildWord( totals:Array<Map<String, Int>> ) : String {
     var word:String = "";
     var b:Int = 0;
     var c:String = "";
