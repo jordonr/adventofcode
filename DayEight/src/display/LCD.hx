@@ -50,7 +50,7 @@ class LCD {
         var wxh = parts[1].split('x');
         createRect(Std.parseInt(wxh[0]), Std.parseInt(wxh[1]));
       } else if(parts[0] == 'rotate') {
-        var loc:Int = Std.parseInt(parts[2].charAt(parts[2].length - 1));
+        var loc:Int = Std.parseInt(parts[2].replace('x=', '').replace('y=', ''));
         var by:Int = Std.parseInt(parts[4]);
 
         if(parts[1] == 'column') {
@@ -61,10 +61,6 @@ class LCD {
       }
 
       display();
-
-      if(line.trim() == 'rotate column x=15 by 1') {
-        Sys.exit(0);
-      }
 
     }
   }
