@@ -1,16 +1,16 @@
-# Advent of Code 2016 - Solutions in Haxe!
+# Advent of Code 2017 - Solutions in what ever I feel like!
 
-This is my repo for going through the 2016 Advent of Code.
+This is my repo for going through the 2017 Advent of Code.
 
 Status -
-* Day 01: 2 Stars
-* Day 02: 2 Stars
-* Day 03: 2 Stars
-* Day 04: 2 Stars
-* Day 05: 2 Stars
-* Day 06: 2 Stars
-* Day 07: 2 Stars
-* Day 08: 2 Stars
+* Day 01: 
+* Day 02: 
+* Day 03: 
+* Day 04: 
+* Day 05: 
+* Day 06: 
+* Day 07: 
+* Day 08: 
 * Day 09:
 * Day 10:
 * Day 11:
