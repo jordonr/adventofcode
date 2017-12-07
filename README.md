@@ -1,30 +1,33 @@
-# Advent of Code 2017 - Solutions in what ever I feel like!
+# Advent of Code 2017 - Solutions in {$language}!
 
 This is my repo for going through the 2017 Advent of Code.
 
-Status -
-* Day 01: 2 Stars - Perl - 01-Solution.pl
-* Day 02: 
-* Day 03: 
-* Day 04: 
-* Day 05: 
-* Day 06: 
-* Day 07: 
-* Day 08: 
-* Day 09:
-* Day 10:
-* Day 11:
-* Day 12:
-* Day 13:
-* Day 14:
-* Day 15:
-* Day 16:
-* Day 17:
-* Day 18:
-* Day 19:
-* Day 20:
-* Day 21:
-* Day 22:
-* Day 23:
-* Day 24:
-* Day 25:
+## Status
+
+| Day           | Stars   | Language | File           |
+| ------------- |:-------:|:--------:| --------------:|
+| Day 01        | 2 Stars | Perl     | 01-Solution.pl |
+| Day 02        | 1 Stars | Perl     | 02-Solution.pl |
+| Day 03        | 0 Stars |||
+| Day 04        | 0 Stars |||
+| Day 05        | 0 Stars |||
+| Day 06        | 0 Stars |||
+| Day 07        | 0 Stars |||
+| Day 08        | 0 Stars |||
+| Day 09        | 0 Stars |||
+| Day 10        | 0 Stars |||
+| Day 11        | 0 Stars |||
+| Day 12        | 0 Stars |||
+| Day 13        | 0 Stars |||
+| Day 14        | 0 Stars |||
+| Day 15        | 0 Stars |||
+| Day 16        | 0 Stars |||
+| Day 17        | 0 Stars |||
+| Day 18        | 0 Stars |||
+| Day 19        | 0 Stars |||
+| Day 20        | 0 Stars |||
+| Day 21        | 0 Stars |||
+| Day 22        | 0 Stars |||
+| Day 23        | 0 Stars |||
+| Day 24        | 0 Stars |||
+| Day 25        | 0 Stars |||
