@@ -3,7 +3,7 @@
 This is my repo for going through the 2017 Advent of Code.
 
 Status -
-* Day 01: 
+* Day 01: 1 Star
 * Day 02: 
 * Day 03: 
 * Day 04: 
