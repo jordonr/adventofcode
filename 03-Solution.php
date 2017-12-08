@@ -5,44 +5,62 @@
 $input = 312051;
 $xCord = 0;
 $yCord = 0;
-$grid[0][0] = 1;
+$val = 1;
 $direction = "RIGHT";
+$length = 1;
+
+$grid[$xCord][$yCord] = $val;
 
 //Test
-$input = 25;
+$input = 9;
+//print "$xCord:$yCord => $val\n";
 
-for($i=2; $i<=$input; $i++) {
+while($input >= $val) {
+    $sides = 0;
+    while($sides < 2) {
 
-    switch($direction) {
+        switch($direction) {
+            case "RIGHT":
+                $xCord++;
+                break;
+            case "UP":
+                $yCord++;
+                break;
+            case "LEFT":
+                $xCord--;
+                break;
+            case "DOWN":
+                $yCord--;
+                break;
+        }
+
+        $grid[$xCord][$yCord] = $val;
+        print "$sides|$length => $xCord:$yCord => $val\n";
+
+        $val++;
+        $sides++;
+    }
+
+    $length++;
+    $direction = nextDirection($direction);
+}
+
+function nextDirection($dir) {
+    $ret = '';
+    switch($dir) {
         case "RIGHT":
-            $xCord++;
-            echo "$xCord:$yCord => $i\n";
-            if($xCord > $yCord) {
-                $direction = "UP";
-            }
+            $ret = "UP";
             break;
-        case "UP": 
-            $yCord++;
-            echo "$xCord:$yCord => $i\n";
-            if($xCord === $yCord) {
-                $direction = "LEFT";
-            }
+        case "UP":
+            $ret = "LEFT";
             break;
-        case "LEFT": 
-            $xCord--;
-            echo "$xCord:$yCord => $i\n";
-            if(abs($xCord) === $yCord) {
-                $direction = "DOWN";
-            }
+        case "LEFT":
+            $ret = "DOWN";
             break;
-        case "DOWN": 
-            $yCord--;
-            echo "$xCord:$yCord => $i\n";
-            if($xCord === $yCord) {
-                $direction = "RIGHT";
-            }
+        case "DOWN":
+            $ret = "RIGHT";
             break;
     }
 
-    $grid["$xCord"]["$yCord"] = $i;
+    return $ret;
 }
