@@ -8,7 +8,7 @@ This is my repo for going through the 2017 Advent of Code.
 | ------------- |:-------:|:--------:| ---------------:|
 | Day 01        | 2 Stars | Perl     | 01-Solution.pl  |
 | Day 02        | 2 Stars | Perl     | 02-Solution.pl  |
-| Day 03        | 0 Stars | PHP      | 03-Solution.php |
+| Day 03        | 2 Stars | PHP      | 03-SolutionPart1.php, 03-SolutionPart2.php |
 | Day 04        | 2 Stars | Perl     | 04-Solution.pl  |
 | Day 05        | 0 Stars |||
 | Day 06        | 0 Stars |||
