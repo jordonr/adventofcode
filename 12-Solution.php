@@ -5,11 +5,19 @@ $inputPath = "./inputs/day12.txt";
 //$inputPath = "./inputs/temp.txt";
 $lines = file($inputPath);
 $pInput = parseInput($lines);
+$connections = [];
 
 $connections = countConnections(0, []);
+print "Part 1: " . count($connections);
 
-var_dump($connections);
-print count($connections);
+$connections = [];
+foreach($pInput as $comp => $pipe) {
+    if(!twoLevelSearch($comp, $connections)) {
+        $connections[] = countConnections($comp, []);
+    }
+}
+
+print "\nPart 2: " . count($connections);
 
 function countConnections($computer, $pipeList) {
     global $pInput;
@@ -34,4 +42,14 @@ function parseInput($data) {
     }
 
     return $retStruct;
+}
+
+function twoLevelSearch($needle, $haystack) {
+    foreach($haystack as $hay) {
+        if(in_array($needle, $hay)) {
+            return TRUE;
+        }
+    }
+
+    return FALSE;
 }
