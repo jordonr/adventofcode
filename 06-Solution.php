@@ -9,6 +9,7 @@ $prevStates = [];
 $banks = preg_split("/\s+/", $input);
 $dupState = FALSE;
 $count = 0;
+$tempState = '';
 
 while(!$dupState) {
     $key = array_search(max($banks), $banks);
@@ -24,7 +25,9 @@ while(!$dupState) {
     $count++;
 }
 
-print $count;
+print "Part 1: $count\n";
+$diff = $count - (array_search($tempState, $prevStates)+1);
+print "Part 2: " . $diff;
 
 function spread($startKey, $memBanks) {
     $loops = $memBanks[$startKey];
