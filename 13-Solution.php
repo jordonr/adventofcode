@@ -13,14 +13,20 @@ $inputPath = "./inputs/day13.txt";
 $lines = file($inputPath);
 $pInput = parseInput($lines);
 $severity = 0;
+$wait = 0;
+$test = 1;
 
-foreach($pInput as $depth => $range) {
-    if($depth % (2 * ($range-1)) == 0) {
-        $severity += $range * $depth;
+
+while($test != 0) {
+    $result = runThrough($pInput, $wait);
+    if($wait == 0 || $result['caught'] == 0) {
+        print "Wait $wait: Severity = " . $result['severity'] . ", Caught = " . $result['caught'] . "\n";
     }
-}
 
-print "Part 1: $severity\n";
+    $test = $result['caught'];
+    
+    $wait++;
+}
 
 function parseInput($data) {
     $retStruct = [];
@@ -31,4 +37,18 @@ function parseInput($data) {
     }
 
     return $retStruct;
+}
+
+function runThrough($firewall, $delay) {
+    $severity = 0;
+    $caught = 0;
+
+    foreach($firewall as $depth => $range) {
+        if(($depth+$delay) % (2 * ($range-1)) == 0) {
+            $severity += $range * $depth;
+            $caught++;
+        }
+    }
+
+    return ["severity" => $severity, "caught" => $caught];
 }
