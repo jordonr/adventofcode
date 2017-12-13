@@ -5,3 +5,4 @@ inputs/
 *.swp
 *.swo
 test.*
+*.n
