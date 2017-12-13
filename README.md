@@ -18,7 +18,7 @@ This is my repo for going through the 2017 Advent of Code.
 | Day 10        | 0 Stars |||
 | Day 11        | 0 Stars |||
 | Day 12        | 2 Stars | PHP      | 12-Solution.php |
-| Day 13        | 0 Stars |||
+| Day 13        | 1 Stars | PHP      | 13-Solution.php |
 | Day 14        | 0 Stars |||
 | Day 15        | 0 Stars |||
 | Day 16        | 0 Stars |||
