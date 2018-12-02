@@ -5,8 +5,8 @@ This is my repo for going through the 2018 Advent of Code.
 ## Status
 
 | Day           | Stars   | Language | File            |
-| ------------- |:-------:|:--------:| ---------------:|
-| Day 01        | 1 Stars | Python   | 01-Solution.py  |
+|:------------- |:-------:|:--------:| ---------------:|
+| Day 01        | 1 Stars | Python & Haxe | 01-Solution.py & Day-01 |
 | Day 02        | 0 Stars |||
 | Day 03        | 0 Stars |||
 | Day 04        | 0 Stars |||
@@ -31,3 +31,9 @@ This is my repo for going through the 2018 Advent of Code.
 | Day 23        | 0 Stars |||
 | Day 24        | 0 Stars |||
 | Day 25        | 0 Stars |||
+
+## Notes
+
+| Day           | Notes   |
+|:------------- |:------- |
+| Day 01        | Took 140 loops through the given input to find the answer.  Python took 2m13.898s, so while that was going I thought I'd try Haxe using the same logic.  The compiled code took 0m8.356s to execute. |
