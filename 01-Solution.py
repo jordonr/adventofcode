@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# Day 01, Part 1 and 2
 
 fh = open('./inputs/Day1.txt')
 #fh = open('./inputs/Day1-Test.txt')

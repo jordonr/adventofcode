@@ -5,7 +5,7 @@ This is my repo for going through the 2018 Advent of Code.
 ## Status
 
 | Day           | Stars   | Language | File            |
-|:------------- |:-------:|:--------:| ---------------:|
+|:-------------:|:-------:|:--------:|:---------------:|
 | Day 01        | 1 Stars | Python & Haxe | 01-Solution.py & Day-01 |
 | Day 02        | 0 Stars |||
 | Day 03        | 0 Stars |||
