@@ -6,8 +6,8 @@ This is my repo for going through the 2018 Advent of Code.
 
 | Day           | Stars   | Language | File            |
 |:-------------:|:-------:|:--------:|:---------------:|
-| Day 01        | 1 Stars | Python & Haxe | 01-Solution.py & Day-01 |
-| Day 02        | 0 Stars |||
+| Day 01        | 2 Stars | Python & Haxe | 01-Solution.py & Day-01 |
+| Day 02        | 1 Stars | Python   | 02-Solution.py  |
 | Day 03        | 0 Stars |||
 | Day 04        | 0 Stars |||
 | Day 05        | 0 Stars |||
