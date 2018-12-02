@@ -27,10 +27,6 @@ for line in fh:
                     didThree = True
                     checksumData['threes'] += 1
                 count = 1
-        else:
-            didTwo = False
-            didThree = False
-
         prevChar = c
 
 output = checksumData['twos'] * checksumData['threes']
