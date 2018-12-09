@@ -8,7 +8,7 @@ This is my repo for going through the 2018 Advent of Code.
 |:-------------:|:-------:|:--------:|:---------------:|
 | Day 01        | 2 Stars | Python & Haxe | 01-Solution.py & Day-01 |
 | Day 02        | 2 Stars | Python   | 02-Solution.py  |
-| Day 03        | 0 Stars |||
+| Day 03        | 1 Stars | PHP      | 03-Solution.php |
 | Day 04        | 0 Stars |||
 | Day 05        | 0 Stars |||
 | Day 06        | 0 Stars |||
@@ -36,4 +36,4 @@ This is my repo for going through the 2018 Advent of Code.
 
 | Day           | Notes   |
 |:------------- |:------- |
-| Day 01        | Took 140 loops through the given input to find the answer.  Python took 2m13.898s, so while that was going I thought I'd try Haxe using the same logic.  The compiled code took 0m8.356s to execute. |
+| Day 01        | Took 140 loops through the given input to find the answer.  Python took 2m13.898s, so while that was going, I thought I'd try Haxe using the same logic.  Haxe complied to cpp target took 0m8.356s to execute. |
