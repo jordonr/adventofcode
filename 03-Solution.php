@@ -8,6 +8,7 @@ $lines = file($inputPath);
 $fabric[] = [];
 $overlap = 0;
 
+// Part 1:
 foreach($lines as $line) {
     $cord = parseCords($line);
 
@@ -29,6 +30,27 @@ foreach($lines as $line) {
 }
 
 print("Number of overlapping claims: {$overlap}\n");
+
+// Part 2:
+foreach($lines as $line) {
+    $cord = parseCords($line);
+
+    $totalClaim = $cord['xCount'] * $cord['yCount'];
+    $sharedClaim = 0;
+
+    for($x=0; $x < $cord['xCount']; $x++) {
+        for($y=0; $y < $cord['yCount']; $y++) {
+            $locX = $cord['x'] + $x;
+            $locY = $cord['y'] + $y;
+
+            $sharedClaim += $fabric[$locX][$locY];
+        }
+    }
+
+    if($totalClaim == $sharedClaim) {
+        print("Claim without overlap: {$cord['claim']}\n");
+    }
+}
 
 function parseCords($cord) {
     preg_match('/#(\d+) @ (\d+),(\d+):\s+(\d+)x(\d+)/', $cord, $parsed);
