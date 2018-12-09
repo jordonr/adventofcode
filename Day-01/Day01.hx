@@ -1,7 +1,5 @@
 package ;
 
-//import keypads.*;
-
 using StringTools;
 
 class Day01 {
