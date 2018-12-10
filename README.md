@@ -10,7 +10,7 @@ This is my repo for going through the 2018 Advent of Code.
 | Day 02        | 2 Stars | Python   | 02-Solution.py  |
 | Day 03        | 2 Stars | PHP      | 03-Solution.php |
 | Day 04        | 2 Stars | PHP      | 04-Solution.php |
-| Day 05        | 0 Stars |||
+| Day 05        | 1 Stars | Haxe     | Day-05          |
 | Day 06        | 0 Stars |||
 | Day 07        | 0 Stars |||
 | Day 08        | 0 Stars |||
@@ -36,4 +36,8 @@ This is my repo for going through the 2018 Advent of Code.
 
 | Day           | Notes   |
 |:------------- |:------- |
+| Running Haxe  | * Interpeter: `haxe -main Day-05 --interpet`
+                  * Neko: `haxe -main Day-05 -neko day05.n`
+                  * CPP Linux: `haxe -main Day-05 -cpp bin`
+                  * CPP Windows: 1) `haxelib install minimingw` 2)`haxe -main Day-05 -cpp bin -lib minimingw`|
 | Day 01        | Took 140 loops through the given input to find the answer.  Python took 2m13.898s, so while that was going, I thought I'd try Haxe using the same logic.  Haxe complied to cpp target took 0m8.356s to execute. |
