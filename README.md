@@ -36,8 +36,10 @@ This is my repo for going through the 2018 Advent of Code.
 
 | Day           | Notes   |
 |:------------- |:------- |
-| Running Haxe  | * Interpeter: `haxe -main Day-05 --interpet`
-                  * Neko: `haxe -main Day-05 -neko day05.n`
-                  * CPP Linux: `haxe -main Day-05 -cpp bin`
-                  * CPP Windows: 1) `haxelib install minimingw` 2)`haxe -main Day-05 -cpp bin -lib minimingw`|
 | Day 01        | Took 140 loops through the given input to find the answer.  Python took 2m13.898s, so while that was going, I thought I'd try Haxe using the same logic.  Haxe complied to cpp target took 0m8.356s to execute. |
+
+### Running Haxe  
+* Interpeter: `haxe -main Day-05 --interpet`
+* Neko: `haxe -main Day-05 -neko day05.n`
+* CPP Linux: `haxe -main Day-05 -cpp bin`
+* CPP Windows: 1) `haxelib install minimingw` 2)`haxe -main Day-05 -cpp bin -lib minimingw`
