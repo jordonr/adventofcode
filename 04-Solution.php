@@ -40,6 +40,7 @@ foreach($lines as $line) {
 }
 
 $sleepyGuard = 0;
+$snoozingGuard = 0;
 foreach($guardInfo as $guard => $info) {
     $guardInfo[$guard]['most_time'] = array_reduce($info, function($carry, $item) {
         return ($carry > $item ? $carry : $item);
@@ -49,10 +50,13 @@ foreach($guardInfo as $guard => $info) {
         return $carry + $item;
     }, 0);
 
-    $guardInfo[$guard]['common_minute'] = array_search($guardInfo[$guard]['most_time'], $guardInfo[$guard]);
-    
+    $guardInfo[$guard]['common_minute'] = array_search($guardInfo[$guard]['most_time'], $guardInfo[$guard]);    
     $sleepyGuard = ($guardInfo[$sleepyGuard]['total_time'] > $guardInfo[$guard]['total_time'] ? $sleepyGuard : $guard);
+    $snoozingGuard = ($guardInfo[$snoozingGuard]['most_time'] > $guardInfo[$guard]['most_time'] ? $snoozingGuard : $guard);
 }
 
 $guardCode = $sleepyGuard * $guardInfo[$sleepyGuard]['common_minute'];
-print("Guard {$sleepyGuard}\nTotal time: {$guardInfo[$sleepyGuard]['total_time']} - Minute: {$guardInfo[$sleepyGuard]['common_minute']} = {$guardInfo[$sleepyGuard]['most_time']} | {$guardCode}\n");
+print("Part 1 Guard {$sleepyGuard}\nTotal time: {$guardInfo[$sleepyGuard]['total_time']} - Minute: {$guardInfo[$sleepyGuard]['common_minute']} = {$guardInfo[$sleepyGuard]['most_time']} | {$guardCode}\n");
+
+$guardCode = $snoozingGuard * $guardInfo[$snoozingGuard]['common_minute'];
+print("Part 2 Guard {$snoozingGuard}\nTotal time: {$guardInfo[$snoozingGuard]['total_time']} - Minute: {$guardInfo[$snoozingGuard]['common_minute']} = {$guardInfo[$snoozingGuard]['most_time']} | {$guardCode}\n");
