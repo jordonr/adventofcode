@@ -9,7 +9,7 @@ This is my repo for going through the 2018 Advent of Code.
 | Day 01        | 2 Stars | Python & Haxe | 01-Solution.py & Day-01 |
 | Day 02        | 2 Stars | Python   | 02-Solution.py  |
 | Day 03        | 2 Stars | PHP      | 03-Solution.php |
-| Day 04        | 0 Stars |||
+| Day 04        | 1 Stars | PHP      | 03-Solution.php |
 | Day 05        | 0 Stars |||
 | Day 06        | 0 Stars |||
 | Day 07        | 0 Stars |||
