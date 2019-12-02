@@ -14,6 +14,7 @@ my $totalMass = 0;
 
 open(my $ih, '<:encoding(UTF-8)', $inputPath) or die "Could not open file '$inputPath' $!";
 my @lines = <$ih>;
+close $ih;
 
 for my $mass (@lines) {
     $totalMass += int($mass / 3) - 2;

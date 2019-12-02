@@ -8,3 +8,4 @@ test.*
 *.n
 .DS_Store
 .vstags
+.vscode
