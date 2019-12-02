@@ -7,3 +7,4 @@ inputs/
 test.*
 *.n
 .DS_Store
+.vstags
