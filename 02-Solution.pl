@@ -18,8 +18,8 @@ use Data::Dumper;
 # ***
 
 my $inputPath = "./inputs/Day02.txt";
-my $opsCode = 0;
-my $location = 0;
+my $output = "";
+my $answer = "";
 
 open(my $ih, '<:encoding(UTF-8)', $inputPath) or die "Could not open file '$inputPath' $!";
 my $inputData = <$ih>;
@@ -28,23 +28,56 @@ close($ih);
 chomp $inputData;
 #$inputData = "1,1,1,4,99,5,6,0,99"; #Test Data
 
-my @strValues = split(/,/, $inputData);
-
+my @intCodeValues = split(/,/, $inputData);
+@strValues = @intCodeValues;
 @strValues[1] = 12;
 @strValues[2] = 2;
 
-while($opsCode != 99) {
-    $opsCode = @strValues[$location];
+$output = runIntCode(@strValues);
 
-    if($opsCode == 1) {
-        @strValues[@strValues[$location+3]] = @strValues[@strValues[$location+1]] + @strValues[@strValues[$location+2]];
-    } elsif ($opsCode == 2) {
-        @strValues[@strValues[$location+3]] = @strValues[@strValues[$location+1]] * @strValues[@strValues[$location+2]];
+print "="x20 . "\n";
+print "Part 1: $output\n";
+print "="x20 . "\n";
+
+$answer = processIntCode(@intCodeValues);
+print "="x20 . "\n";
+print "Part 2: $answer\n";
+print "="x20 . "\n";
+
+
+sub runIntCode {
+    my @intCode = @_;
+    my $opsCode = 0;
+    my $location = 0;
+
+    while($opsCode != 99) {
+        $opsCode = @intCode[$location];
+
+        if($opsCode == 1) {
+            @intCode[@intCode[$location+3]] = @intCode[@intCode[$location+1]] + @intCode[@intCode[$location+2]];
+        } elsif ($opsCode == 2) {
+            @intCode[@intCode[$location+3]] = @intCode[@intCode[$location+1]] * @intCode[@intCode[$location+2]];
+        }
+
+        $location += 4;
     }
 
-    $location += 4;
+    return @intCode[0];
 }
 
-print "="x20 . "\n";
-print "Part 1: @strValues[0]\n";
-print "="x20 . "\n";
+sub processIntCode {
+    my $output = "";
+
+    for($n=0; $n<=99; $n++) {
+        @intCodeValues[1] = $n;
+        for($v=0; $v<=99; $v++) {
+            @intCodeValues[2] = $v;
+
+            $output = runIntCode(@intCodeValues);
+
+            if ($output == 19690720) {
+                return "Found it: 100*$n+$v = " . (100*$n+$v);
+            }
+        }
+    }
+}
