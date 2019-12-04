@@ -8,7 +8,7 @@ This is my repo for going through the 2019 Advent of Code.
 |:-------------:|:-------:|:--------:|:---------------:|
 | Day 01        | **      | Perl     | 01-Solution.pl  |
 | Day 02        | **      | Perl     | 02-Solution.pl  |
-| Day 03        |  |||
+| Day 03        | *       | PHP      | 03-Solution.php |
 | Day 04        |  |||
 | Day 05        |  |||
 | Day 06        |  |||
