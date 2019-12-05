@@ -36,7 +36,7 @@ This is my repo for going through the 2019 Advent of Code.
 
 | Day           | Notes   |
 |:------------- |:------- |
-| Day 03        | Part 1 times: PHP: 16m35.405s, Haxe target interp: 2m49.701s, cpp: 2m12.289s.  New Haxe 4 interpeter is almost comparible to cpp. |
+| Day 03        | Part 1 times: PHP: 16m35.405s, Haxe target interp: 2m49.701s using Arrays, using a Map it takes 0m0.707s. |
 
 ### Running Haxe  
 * Interpeter: `haxe -main Day03 --interp`
