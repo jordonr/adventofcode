@@ -9,7 +9,7 @@ This is my repo for going through the 2019 Advent of Code.
 | Day 01        | **      | Perl     | 01-Solution.pl  |
 | Day 02        | **      | Perl     | 02-Solution.pl  |
 | Day 03        | **      | PHP, Haxe| 03-Solution.php, 03-Solution |
-| Day 04        | *       | Haxe     | 04-Solution     |
+| Day 04        | **      | Haxe     | 04-Solution     |
 | Day 05        |  |||
 | Day 06        |  |||
 | Day 07        |  |||
