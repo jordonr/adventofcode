@@ -8,7 +8,7 @@ This is my repo for going through the 2019 Advent of Code.
 |:-------------:|:-------:|:--------:|:---------------:|
 | Day 01        | **      | Perl     | 01-Solution.pl  |
 | Day 02        | **      | Perl     | 02-Solution.pl  |
-| Day 03        | *       | PHP      | 03-Solution.php |
+| Day 03        | *       | PHP      | 03-Solution.php, 03-Solution |
 | Day 04        |  |||
 | Day 05        |  |||
 | Day 06        |  |||
@@ -36,3 +36,10 @@ This is my repo for going through the 2019 Advent of Code.
 
 | Day           | Notes   |
 |:------------- |:------- |
+| Day 03        | Part 1 times: PHP: 16m35.405s, Haxe target interp: 2m49.701s, cpp: 2m12.289s.  New Haxe 4 interpeter is almost comparible to cpp. |
+
+### Running Haxe  
+* Interpeter: `haxe -main Day03 --interp`
+* Neko: `haxe -main Day03 -neko day03.n`
+* CPP Linux/Mac: `haxe -main Day03 -cpp bin`
+* CPP Windows: 1) `haxelib install minimingw` 2)`haxe -main Day03 -cpp bin -lib minimingw`
