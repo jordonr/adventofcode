@@ -1,15 +1,16 @@
-# Advent of Code 2019 - Solutions in {$language}!
+# Advent of Code 2020 - Solutions in {$language}!
+## COVID Edition
 
-This is my repo for going through the 2019 Advent of Code.
+This is my repo for going through the 2020 Advent of Code.
 
 ## Status
 
 | Day           | Stars   | Language | File            |
 |:-------------:|:-------:|:--------:|:---------------:|
-| Day 01        | **      | Perl     | 01-Solution.pl  |
-| Day 02        | **      | Perl     | 02-Solution.pl  |
-| Day 03        | **      | PHP, Haxe| 03-Solution.php, 03-Solution |
-| Day 04        | **      | Haxe     | 04-Solution     |
+| Day 01        |       | | |
+| Day 02        |       | | |
+| Day 03        |       | | |
+| Day 04        |       | | |
 | Day 05        |  |||
 | Day 06        |  |||
 | Day 07        |  |||
@@ -36,11 +37,15 @@ This is my repo for going through the 2019 Advent of Code.
 
 | Day           | Notes   |
 |:------------- |:------- |
-| Day 03        | Part 1 times: PHP: 16m35.405s, Haxe target interp: 2m49.701s using Arrays. |
-|               | Haxe for Part 1 and 2, using a Map; interp: 0m0.707s, cpp: 0m0.188s. |
+|        |  |
 
 ### Running Haxe  
-* Interpeter: `haxe -main Day03 --interp`
-* Neko: `haxe -main Day03 -neko day03.n`
-* CPP Linux/Mac: `haxe -main Day03 -cpp bin`
-* CPP Windows: 1) `haxelib install minimingw` 2)`haxe -main Day03 -cpp bin -lib minimingw`
+* Interpeter: 
+    `haxe -main Day03 --interp`
+* Neko: 
+    `haxe -main Day03 -neko day03.n`
+* CPP Linux/Mac: 
+    `haxe -main Day03 -cpp bin`
+* CPP Windows: 
+    `haxelib install minimingw` 
+    `haxe -main Day03 -cpp bin -lib minimingw`
