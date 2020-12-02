@@ -8,7 +8,7 @@ This is my repo for going through the 2020 Advent of Code.
 | Day           | Stars   | Language | File            |
 |:-------------:|:-------:|:--------:|:---------------:|
 | Day 01        | **      | Haxe     | 01-Solution     |
-| Day 02        |       | | |
+| Day 02        | **      | Haxe     | 02-Solution     |
 | Day 03        |       | | |
 | Day 04        |       | | |
 | Day 05        |  |||
