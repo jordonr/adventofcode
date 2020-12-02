@@ -7,7 +7,7 @@ This is my repo for going through the 2020 Advent of Code.
 
 | Day           | Stars   | Language | File            |
 |:-------------:|:-------:|:--------:|:---------------:|
-| Day 01        |       | | |
+| Day 01        | **      | Haxe     | 01-Solution     |
 | Day 02        |       | | |
 | Day 03        |       | | |
 | Day 04        |       | | |
@@ -41,11 +41,11 @@ This is my repo for going through the 2020 Advent of Code.
 
 ### Running Haxe  
 * Interpeter: 
-    `haxe -main Day03 --interp`
+    `haxe -main Day01 --interp`
 * Neko: 
-    `haxe -main Day03 -neko day03.n`
+    `haxe -main Day01 -neko day01.n`
 * CPP Linux/Mac: 
-    `haxe -main Day03 -cpp bin`
+    `haxe -main Day01 -cpp bin`
 * CPP Windows: 
     `haxelib install minimingw` 
-    `haxe -main Day03 -cpp bin -lib minimingw`
+    `haxe -main Day01 -cpp bin -lib minimingw`
