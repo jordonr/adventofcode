@@ -9,7 +9,7 @@ This is my repo for going through the 2020 Advent of Code.
 |:-------------:|:-------:|:--------:|:---------------:|
 | Day 01        | **      | Haxe     | 01-Solution     |
 | Day 02        | **      | Haxe     | 02-Solution     |
-| Day 03        |       | | |
+| Day 03        | **      | Haxe     | 03-Solution     |
 | Day 04        |       | | |
 | Day 05        |  |||
 | Day 06        |  |||
@@ -37,7 +37,7 @@ This is my repo for going through the 2020 Advent of Code.
 
 | Day           | Notes   |
 |:------------- |:------- |
-|        |  |
+| Day 03        | I had to implement Int64 to get the product of all 5 slopes |
 
 ### Running Haxe  
 * Interpeter: 
