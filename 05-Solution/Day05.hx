@@ -67,9 +67,30 @@ class Day05 {
 	}
 
 	private static function partTwo(boarding:Array<String>):Int {
-		var valid = 0;
+		var mySeatId:Int = 0;
+		var allSeatIds:Array<Int> = [];
 
-		return valid;
+		for (pass in boarding) {
+			var seatId = 0;
+
+			var row = getRow(pass);
+			var column = getColumn(pass);
+
+			allSeatIds.push(row * 8 + column);
+		}
+
+		allSeatIds.sort((a, b) -> a - b);
+		var count = allSeatIds[0];
+
+		for (i in 0...allSeatIds.length) {
+			if (allSeatIds[i] != count) {
+				return count;
+			}
+
+			count++;
+		}
+
+		return mySeatId;
 	}
 
 	private static function getRow(pass:String):Int {
