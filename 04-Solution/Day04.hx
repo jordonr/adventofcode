@@ -2,7 +2,6 @@ package;
 
 using Math;
 using StringTools;
-using haxe.Int64;
 
 /****
 	Part 1 -
