@@ -73,6 +73,4 @@ class Day07 {
 
 		return bags;
 	}
-
-	private static function bagDefinition(desc:String) {}
 }
