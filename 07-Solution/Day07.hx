@@ -16,15 +16,15 @@ class Day07 {
 
 	static public function main() {
 		input = sys.io.File.getContent(inputPath).trim();
+		var bagList:Array<String> = input.split("\n");
 
-		Sys.println('Part 1: ' + partOne(input));
-		// Sys.println('Part 2: ' + partTwo(customs));
+		Sys.println('Part 1: ' + partOne(bagList));
+		Sys.println('Part 2: ' + partTwo(bagList));
 	}
 
-	private static function partOne(input:String):Int {
+	private static function partOne(bagList:Array<String>):Int {
 		var bags:Array<String> = [];
 		var uniqueBags:Array<String> = [];
-		var bagList:Array<String> = input.split("\n");
 		var shinySearch = " shiny gold";
 
 		var bags = bagBags(shinySearch, bagList);
@@ -37,10 +37,10 @@ class Day07 {
 		return uniqueBags.length;
 	}
 
-	private static function partTwo(customs:Array<String>):Int {
-		var yesTotal:Int = 0;
+	private static function partTwo(bagList:Array<String>):Int {
+		var bags:Int = bagCounter("shiny gold", bagList);
 
-		return yesTotal;
+		return bags - 1; // Don't count the shiny gold bag
 	}
 
 	private static function bagBags(bagSearch:String, bagList:Array<String>):Array<String> {
@@ -56,4 +56,23 @@ class Day07 {
 
 		return hasShiny;
 	}
+
+	private static function bagCounter(bagColor:String, bagList:Array<String>):Int {
+		var bags:Int = 1;
+		var containedRegex = ~/(\d+)\s(\w+\s\w+)\sbags?/g;
+
+		for (bag in bagList) {
+			if (bag.indexOf(bagColor) == 0) {
+				var bagDef = bag;
+				while (containedRegex.match(bagDef)) {
+					bags += Std.parseInt(containedRegex.matched(1)) * bagCounter(containedRegex.matched(2), bagList);
+					bagDef = containedRegex.matchedRight();
+				}
+			}
+		}
+
+		return bags;
+	}
+
+	private static function bagDefinition(desc:String) {}
 }
