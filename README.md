@@ -14,7 +14,7 @@ This is my repo for going through the 2020 Advent of Code.
 | Day 05        | **      | Haxe     | 05-Solution     |
 | Day 06        | **      | Haxe     | 06-Solution     |
 | Day 07        | **      | Haxe     | 07-Solution     |
-| Day 08        |  |||
+| Day 08        | **      | Haxe     | 08-Solution     |
 | Day 09        |  |||
 | Day 10        |  |||
 | Day 11        |  |||
