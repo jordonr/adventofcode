@@ -12,7 +12,7 @@ This is my repo for going through the 2020 Advent of Code.
 | Day 03        | **      | Haxe     | 03-Solution     |
 | Day 04        | **      | Haxe     | 04-Solution     |
 | Day 05        | **      | Haxe     | 05-Solution     |
-| Day 06        |  |||
+| Day 06        | **      | Haxe     | 06-Solution     |
 | Day 07        |  |||
 | Day 08        |  |||
 | Day 09        |  |||
