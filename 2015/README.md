@@ -8,7 +8,7 @@ This is my repo for going through the 2015 Advent of Code.
 
 | Day           | Stars   | Language |
 |:-------------:|:-------:|:--------:|
-| Day 01        | *      | Haxe     | 
+| Day 01        | **      | Haxe     | 
 | Day 02        |  ||
 | Day 03        |  ||
 | Day 04        |  ||
