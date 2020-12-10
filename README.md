@@ -16,7 +16,7 @@ This is my repo for going through the 2020 Advent of Code.
 | Day 07        | **      | Haxe     | 07-Solution     |
 | Day 08        | **      | Haxe     | 08-Solution     |
 | Day 09        | **      | Haxe     | 09-Solution     |
-| Day 10        |  |||
+| Day 10        | **      | Haxe     | Day10.hx        |
 | Day 11        |  |||
 | Day 12        |  |||
 | Day 13        |  |||
@@ -37,7 +37,10 @@ This is my repo for going through the 2020 Advent of Code.
 
 | Day           | Notes   |
 |:------------- |:------- |
-| Day 03        | I had to implement Int64 to get the product of all 5 slopes |
+| Day 03        | I had to use Int64 to get the product of all 5 slopes |
+| Day 10        | Needed to use Int64 for part 2, also needed help on this one.|
+|               | I referenced for my solution: https://github.com/mateom99/Advent-of-Code/blob/main/2020/Day%2010/day10.cpp |
+|               | Also staring on Day 10 I changed how I organized my code.  I'll have go back and refactor the previous 9 days |
 
 ### Running Haxe  
 * Interpeter: 
