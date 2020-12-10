@@ -10,7 +10,7 @@ This is my repo for going through the 2015 Advent of Code.
 |:-------------:|:-------:|:--------:|
 | Day 01        | **      | Haxe     | 
 | Day 02        | **      | Haxe     |
-| Day 03        |  ||
+| Day 03        | **      | Haxe     |
 | Day 04        |  ||
 | Day 05        |  ||
 | Day 06        |  ||
@@ -39,3 +39,6 @@ This is my repo for going through the 2015 Advent of Code.
 | Day           | Notes   |
 |:------------- |:------- |
 |         |  |
+
+### Running Haxe  
+`haxe build.hxml -D day=1`
