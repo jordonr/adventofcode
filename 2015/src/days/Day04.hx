@@ -2,8 +2,6 @@ package days;
 
 import haxe.crypto.Md5;
 
-using haxe.Int64;
-
 class Day04 {
 	public function new(data:String) {
 		Sys.println('Part 1: ' + partOne(data, "00000"));

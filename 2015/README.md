@@ -6,12 +6,12 @@ This is my repo for going through the 2015 Advent of Code.
 
 ## Status
 
-| Day           | Stars   | Language |
-|:-------------:|:-------:|:--------:|
-| Day 01        | **      | Haxe     | 
-| Day 02        | **      | Haxe     |
-| Day 03        | **      | Haxe     |
-| Day 04        |  ||
+| Day           | Stars   |
+|:-------------:|:-------:|
+| Day 01        | **      |
+| Day 02        | **      |
+| Day 03        | **      |
+| Day 04        | **      |
 | Day 05        |  ||
 | Day 06        |  ||
 | Day 07        |  ||
