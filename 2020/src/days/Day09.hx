@@ -1,7 +1,9 @@
-package;
+package days;
 
 using Math;
 using StringTools;
+
+import utils.ReadData;
 
 /****
 	Part 1 -
@@ -10,22 +12,16 @@ using StringTools;
 	Used Part 1 to find the line that stared the loop, changed it from jmp to nop
 ***/
 class Day09 {
-	private static inline var inputPath:String = "../inputs/Day09.txt";
-	// private static inline var inputPath:String = "../inputs/Day09-Test.txt";
-	private static var input:String = "";
+	public function new(path:String) {
+		var preamble:Array<String> = ReadData.getLines(path);
 
-	static public function main() {
-		input = sys.io.File.getContent(inputPath).trim();
-		var preamble:Array<String> = input.split("\n");
-
-		// var badNumber:Int = partOne(preamble, 5);
 		var badNumber:Int = partOne(preamble, 25);
 
 		Sys.println('Part 1: ' + badNumber);
 		Sys.println('Part 2: ' + partTwo(preamble, badNumber));
 	}
 
-	private static function partOne(preamble:Array<String>, prev:Int):Int {
+	private function partOne(preamble:Array<String>, prev:Int):Int {
 		var answer:Int = 0;
 		var history:Array<Int> = [];
 
@@ -46,7 +42,7 @@ class Day09 {
 		return answer;
 	}
 
-	private static function partTwo(preamble:Array<String>, badNumber:Int):Int {
+	private function partTwo(preamble:Array<String>, badNumber:Int):Int {
 		var history:Array<Int> = [];
 		var total:Int = 0;
 
@@ -69,7 +65,7 @@ class Day09 {
 		return 0;
 	}
 
-	private static function checkSum(numberList:Array<Int>, sum:Int):Bool {
+	private function checkSum(numberList:Array<Int>, sum:Int):Bool {
 		for (i in 0...numberList.length) {
 			for (j in 0...numberList.length) {
 				if (numberList[i] + numberList[j] == sum && i != j) {

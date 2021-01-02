@@ -1,7 +1,9 @@
-package;
+package days;
 
 using Math;
 using StringTools;
+
+import utils.ReadData;
 
 /****
 	Part 1 -
@@ -10,20 +12,17 @@ using StringTools;
 
 ***/
 class Day06 {
-	private static inline var inputPath:String = "../inputs/Day06.txt";
-	// private static inline var inputPath:String = "../inputs/Day06-Test.txt";
-	private static var input:String = "";
-
-	static public function main() {
-		input = sys.io.File.getContent(inputPath).trim();
+	public function new(path:String) {
+		var input:String = ReadData.getFile(path);
 		var lineRegex = ~/\n\n/g;
+		// var lineRegex = ~/\r\n\r\n/g; // Windows
 		var customs:Array<String> = lineRegex.split(input);
 
 		Sys.println('Part 1: ' + partOne(customs));
 		Sys.println('Part 2: ' + partTwo(customs));
 	}
 
-	private static function partOne(customs:Array<String>):Int {
+	private function partOne(customs:Array<String>):Int {
 		var yesTotal:Int = 0;
 
 		for (qa in customs) {
@@ -43,7 +42,7 @@ class Day06 {
 		return yesTotal;
 	}
 
-	private static function partTwo(customs:Array<String>):Int {
+	private function partTwo(customs:Array<String>):Int {
 		var yesTotal:Int = 0;
 
 		for (qa in customs) {

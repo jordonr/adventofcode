@@ -1,7 +1,9 @@
-package;
+package days;
 
 using Math;
 using StringTools;
+
+import utils.ReadData;
 
 /****
 	Part 1 -
@@ -10,19 +12,13 @@ using StringTools;
 	Used Part 1 to find the line that stared the loop, changed it from jmp to nop
 ***/
 class Day08 {
-	private static inline var inputPath:String = "../inputs/Day08.txt";
-	// private static inline var inputPath:String = "../inputs/Day08-Test.txt";
-	private static var input:String = "";
-
-	static public function main() {
-		input = sys.io.File.getContent(inputPath).trim();
-		var instructions:Array<String> = input.split("\n");
-
-		// Sys.println('Part 1: ' + partOne(instructions));
-		Sys.println('Part 2: ' + partTwo(instructions));
+	public function new(path:String) {
+		var instructions:Array<String> = ReadData.getLines(path);
+		Sys.println('Part 1: ' + partOne(instructions));
+		// Sys.println('Part 2: ' + partTwo(instructions));
 	}
 
-	private static function partOne(instructions:Array<String>):Int {
+	private function partOne(instructions:Array<String>):Int {
 		var acc:Int = 0;
 		var oppTracker:Array<Int> = [];
 		var run:Bool = true;
@@ -50,7 +46,7 @@ class Day08 {
 		return acc;
 	}
 
-	private static function partTwo(instructions:Array<String>):Int {
+	private function partTwo(instructions:Array<String>):Int {
 		var acc:Int = 0;
 		var oppTracker:Array<Int> = [];
 		var run:Bool = true;
