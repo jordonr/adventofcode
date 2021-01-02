@@ -43,12 +43,4 @@ This is my repo for going through the 2020 Advent of Code.
 |               | Also staring on Day 10 I changed how I organized my code.  ~~I'll have go back and refactor the previous 9 days~~ |
 
 ### Running Haxe  
-* Interpeter: 
-    `haxe -main Day01 --interp`
-* Neko: 
-    `haxe -main Day01 -neko day01.n`
-* CPP Linux/Mac: 
-    `haxe -main Day01 -cpp bin`
-* CPP Windows: 
-    `haxelib install minimingw` 
-    `haxe -main Day01 -cpp bin -lib minimingw`
+`haxe build.hxml -D day=1`
