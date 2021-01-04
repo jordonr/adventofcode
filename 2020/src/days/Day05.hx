@@ -1,7 +1,9 @@
-package;
+package days;
 
 using Math;
 using StringTools;
+
+import utils.ReadData;
 
 /****
 	Part 1 -
@@ -35,20 +37,14 @@ using StringTools;
 
 ***/
 class Day05 {
-	private static inline var inputPath:String = "../inputs/Day05.txt";
-	// private static inline var inputPath:String = "../inputs/Day05-Test.txt";
-	private static var input:String = "";
-
-	static public function main() {
-		input = sys.io.File.getContent(inputPath).trim();
-		var lineRegex = ~/\n/g;
-		var boarding:Array<String> = lineRegex.split(input);
+	public function new(path:String) {
+		var boarding:Array<String> = ReadData.getLines(path);
 
 		Sys.println('Part 1: ' + partOne(boarding));
 		Sys.println('Part 2: ' + partTwo(boarding));
 	}
 
-	private static function partOne(boarding:Array<String>):Int {
+	private function partOne(boarding:Array<String>):Int {
 		var highestSeatId:Int = 0;
 
 		for (pass in boarding) {
@@ -66,7 +62,7 @@ class Day05 {
 		return highestSeatId;
 	}
 
-	private static function partTwo(boarding:Array<String>):Int {
+	private function partTwo(boarding:Array<String>):Int {
 		var mySeatId:Int = 0;
 		var allSeatIds:Array<Int> = [];
 
@@ -93,7 +89,7 @@ class Day05 {
 		return mySeatId;
 	}
 
-	private static function getRow(pass:String):Int {
+	private function getRow(pass:String):Int {
 		var rowLimit = [0, 127];
 		var fb = pass.substr(0, 7);
 
@@ -111,7 +107,7 @@ class Day05 {
 		return rowLimit[0];
 	}
 
-	private static function getColumn(pass:String):Int {
+	private function getColumn(pass:String):Int {
 		var columnLimit = [0, 7];
 		var lr = pass.substr(7);
 

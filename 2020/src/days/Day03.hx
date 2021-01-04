@@ -1,8 +1,10 @@
-package;
+package days;
 
 using Math;
 using StringTools;
 using haxe.Int64;
+
+import utils.ReadData;
 
 /****
 	Part 1 -
@@ -13,21 +15,15 @@ using haxe.Int64;
 	These slopes would find 2, 7, 3, 4, and 2 tree(s) respectively; multiplied together, these produce the answer 336.
 ***/
 class Day03 {
-	private static inline var inputPath:String = "../inputs/Day03.txt";
-	// private static inline var inputPath: String = "../inputs/Day03-Test.txt";
-	private static var input:String = "";
-
-	static public function main() {
-		input = sys.io.File.getContent(inputPath).trim();
-		var lineRegex = ~/\n/g;
-		var lines:Array<String> = lineRegex.split(input);
+	public function new(path:String) {
+		var lines:Array<String> = ReadData.getLines(path);
 
 		Sys.println('Part 1: ' + downHill(lines, 3, 1));
 		var product = downHill(lines, 1, 1) * downHill(lines, 3, 1) * downHill(lines, 5, 1) * downHill(lines, 7, 1) * downHill(lines, 1, 2);
 		Sys.println('Part 2: ' + product);
 	}
 
-	private static function downHill(lines:Array<String>, right:Int, down:Int):Int64 {
+	private function downHill(lines:Array<String>, right:Int, down:Int):Int64 {
 		var trees = 0;
 		var treeChar = "#";
 		var dist = 0;

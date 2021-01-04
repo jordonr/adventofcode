@@ -1,7 +1,9 @@
-package;
+package days;
 
 using Math;
 using StringTools;
+
+import utils.ReadData;
 
 /****
 	Part 1 -
@@ -28,12 +30,8 @@ using StringTools;
 
 ***/
 class Day04 {
-	private static inline var inputPath:String = "../inputs/Day04.txt";
-	// private static inline var inputPath:String = "../inputs/Day04-Test.txt";
-	private static var input:String = "";
-
-	static public function main() {
-		input = sys.io.File.getContent(inputPath).trim();
+	public function new(path:String) {
+		var input:String = ReadData.getFile(path);
 		var lineRegex = ~/\n\n/g;
 		// var lineRegex = ~/\r\n\r\n/g; // Windows
 		var passports:Array<String> = lineRegex.split(input);
@@ -42,7 +40,7 @@ class Day04 {
 		Sys.println('Part 2: ' + partTwo(passports));
 	}
 
-	private static function partOne(passports:Array<String>):Int {
+	private function partOne(passports:Array<String>):Int {
 		var valid = 0;
 		var requiredFields = 7;
 		var fieldRegex = ~/(\w{3}):/g;
@@ -80,7 +78,7 @@ class Day04 {
 		return valid;
 	}
 
-	private static function partTwo(passports:Array<String>):Int {
+	private function partTwo(passports:Array<String>):Int {
 		var valid = 0;
 		var requiredFields = 7;
 		var fieldRegex = ~/(\w{3}):([\w\d#]+)/g;

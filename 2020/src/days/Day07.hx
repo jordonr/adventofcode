@@ -1,7 +1,9 @@
-package;
+package days;
 
 using Math;
 using StringTools;
+
+import utils.ReadData;
 
 /****
 	Part 1 -
@@ -10,19 +12,14 @@ using StringTools;
 
 ***/
 class Day07 {
-	private static inline var inputPath:String = "../inputs/Day07.txt";
-	// private static inline var inputPath:String = "../inputs/Day07-Test.txt";
-	private static var input:String = "";
-
-	static public function main() {
-		input = sys.io.File.getContent(inputPath).trim();
-		var bagList:Array<String> = input.split("\n");
+	public function new(path:String) {
+		var bagList:Array<String> = ReadData.getLines(path);
 
 		Sys.println('Part 1: ' + partOne(bagList));
 		Sys.println('Part 2: ' + partTwo(bagList));
 	}
 
-	private static function partOne(bagList:Array<String>):Int {
+	private function partOne(bagList:Array<String>):Int {
 		var bags:Array<String> = [];
 		var uniqueBags:Array<String> = [];
 		var shinySearch = " shiny gold";
@@ -37,7 +34,7 @@ class Day07 {
 		return uniqueBags.length;
 	}
 
-	private static function partTwo(bagList:Array<String>):Int {
+	private function partTwo(bagList:Array<String>):Int {
 		var bags:Int = bagCounter("shiny gold", bagList);
 
 		return bags - 1; // Don't count the shiny gold bag
@@ -57,7 +54,7 @@ class Day07 {
 		return hasShiny;
 	}
 
-	private static function bagCounter(bagColor:String, bagList:Array<String>):Int {
+	private function bagCounter(bagColor:String, bagList:Array<String>):Int {
 		var bags:Int = 1;
 		var containedRegex = ~/(\d+)\s(\w+\s\w+)\sbags?/g;
 
