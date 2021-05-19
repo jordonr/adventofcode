@@ -1,0 +1,7 @@
+#-lib haxe-strings
+-cp src
+-main Main
+--dce full
+#--debug
+--interp
+#--cpp bin/
