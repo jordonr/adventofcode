@@ -9,12 +9,13 @@ class Day09 {
 	public function new(path:String) {
 		var input:String = ReadData.getFile(path);
 
-		Sys.println("Part 1: " + part1(input).length);
-		Sys.println("Part 2: " + testMulti(input));
+		Sys.println("Part 1: " + part1(input));
+		// input = "(27x12)(20x12)(13x14)(7x10)(1x12)A";
+		Sys.println("Part 2: " + part2(input));
 	}
 
-	private function part1(input:String):String {
-		var uncompressedData:String = "";
+	private function part1(input:String):Int {
+		var uncompressedData:Int = 0;
 		var c:Int = 0;
 
 		while (c < input.length) {
@@ -22,15 +23,11 @@ class Day09 {
 				var start:Int = c + 1;
 				var end:Int = input.substr(start).indexOf(")");
 				var instruct:Array<Int> = input.substr(start, end).split("x").map(Std.parseInt);
-				var repeat:String = input.substr(start + end + 1, instruct[0]);
-
-				for (i in 0...instruct[1]) {
-					uncompressedData += repeat;
-				}
+				uncompressedData += instruct[0] * instruct[1];
 
 				c = start + end + instruct[0];
 			} else {
-				uncompressedData += input.charAt(c);
+				uncompressedData++;
 			}
 
 			c++;
@@ -39,9 +36,8 @@ class Day09 {
 		return uncompressedData;
 	}
 
-	private function testMulti(data:String):Int64 {
+	private function part2(input:String):Int64 {
 		var uncompressedLength:Int64 = 0;
-		var input:String = data;
 		var c:Int = 0;
 		var r = ~/\(\d+x\d+\)/;
 
@@ -53,10 +49,10 @@ class Day09 {
 				var repeat:String = input.substr(start + end + 1, instruct[0]);
 
 				if (r.match(repeat)) {
-					uncompressedLength += testMulti(repeat);
+					uncompressedLength += instruct[1] * part2(repeat);
+				} else {
+					uncompressedLength += instruct[0] * instruct[1];
 				}
-
-				uncompressedLength += instruct[0] * instruct[1];
 
 				c = start + end + instruct[0];
 			} else {
@@ -66,22 +62,6 @@ class Day09 {
 			c++;
 		}
 
-		trace(uncompressedLength);
 		return uncompressedLength;
 	}
-	/*
-		private function part2(data:String):String {
-			var r = ~/\(\d+x\d+\)/;
-			var decomp:String = data;
-			// var decomp:String = "(25x3)(3x3)ABC(2x3)XY(5x2)PQRSTX(18x9)(3x2)TWO(5x7)SEVEN";
-			var c:Int = 0;
-			while (r.match(decomp)) {
-				decomp = part1(decomp);
-				Sys.println(c);
-				c++;
-			}
-
-			return decomp;
-		}
-	 */
 }
