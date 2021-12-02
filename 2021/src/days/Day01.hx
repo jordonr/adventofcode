@@ -9,7 +9,8 @@ import utils.ReadData;
 	Part 1 -
 	Count the number of times a depth measurement increases from the previous measurement.
 	Part 2 -
-
+	Your goal now is to count the number of times the sum of measurements in this sliding window increases from the previous sum. 
+	So, compare A with B, then compare B with C, then C with D, and so on. Stop when there aren't enough measurements left to create a new three-measurement sum.
 ***/
 class Day01 {
 	public function new(path:String) {
