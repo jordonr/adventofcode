@@ -40,7 +40,4 @@ This is my repo for going through the 2019 Advent of Code.
 |               | Haxe for Part 1 and 2, using a Map; interp: 0m0.707s, cpp: 0m0.188s. |
 
 ### Running Haxe  
-* Interpeter: `haxe -main Day03 --interp`
-* Neko: `haxe -main Day03 -neko day03.n`
-* CPP Linux/Mac: `haxe -main Day03 -cpp bin`
-* CPP Windows: 1) `haxelib install minimingw` 2)`haxe -main Day03 -cpp bin -lib minimingw`
+`haxe build.hxml -D day=1`
