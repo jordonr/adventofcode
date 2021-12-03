@@ -1,9 +1,8 @@
 package days;
 
-using Math;
-using StringTools;
-
+import haxe.iterators.StringIteratorUnicode;
 import utils.ReadData;
+import utils.IntCode;
 
 /****
 	Part 1 -
@@ -20,24 +19,25 @@ import utils.ReadData;
 	Part 2 -
 ***/
 class Day02 {
+	var intCodeComp:IntCode;
+
 	public function new(path:String) {
-		var lines:Array<String> = ReadData.getLines(path);
-		var test:Array<String> = ["1,9,10,3,2,3,11,0,99,30,40,50"];
+		intCodeComp = new IntCode();
+		var input:String = ReadData.getFile(path);
+		var inputParts:Array<Int> = input.split(",").map(item -> Std.parseInt(item));
 
-		Sys.println('Part 1: ' + partOne(test));
-		Sys.println('Part 2: ' + partTwo(lines));
+		Sys.println('Part 1: ' + partOne(inputParts.copy()));
+		Sys.println('Part 2: ' + partTwo(inputParts.copy()));
 	}
 
-	private function partOne(lines:Array<String>):Int {
-		for (line in lines) {
-			var lineParts:Array<String> = line.split(",");
-			trace(lineParts);
-		}
-
-		return 0;
+	private function partOne(input:Array<Int>):Int {
+		input[1] = 12;
+		input[2] = 2;
+		var returnCodes = intCodeComp.runIntCode(input);
+		return returnCodes[0];
 	}
 
-	private function partTwo(lines:Array<String>):Int {
-		return 0;
+	private function partTwo(input:Array<Int>):String {
+		return intCodeComp.searchInstructions(input, 19690720);
 	}
 }

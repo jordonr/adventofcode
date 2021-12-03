@@ -17,7 +17,7 @@ use Data::Dumper;
 # replace position 2 with the value 2. What value is left at position 0 after the program halts?
 # ***
 
-my $inputPath = "./inputs/Day02.txt";
+my $inputPath = "../inputs/Day02.txt";
 my $output = "";
 my $answer = "";
 
