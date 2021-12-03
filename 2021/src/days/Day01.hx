@@ -1,6 +1,5 @@
 package days;
 
-using Math;
 using StringTools;
 
 import utils.ReadData;
