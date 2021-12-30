@@ -20,20 +20,24 @@ class Day04 {
 	private var cardDeck:Array<Map<String, {point:Point, value:Int, found:Bool}>>;
 	private var cardIndex:Array<Map<Int, Point>>;
 	private var sideLength:Int;
+	private var winningCards:Array<Map<String, {point:Point, value:Int, found:Bool}>>;
+	private var winningTotals:Array<Int>;
 
 	public function new(path:String) {
 		var lines:Array<String> = ReadData.getLines(path);
 		balls = lines.shift().split(",").map(Std.parseInt);
 		sideLength = lines[3].trim().replace("  ", " ").split(" ").length;
+		winningCards = [];
+		winningTotals = [];
 
 		populateCards(lines.join("\n"));
+		playBingo(lines);
 
-		Sys.println('Part 1: ' + partOne(lines));
-		Sys.println('Part 2: ' + partTwo(lines));
+		Sys.println('Part 1: ' + winningTotals[0]);
+		Sys.println('Part 2: ' + winningTotals[winningTotals.length - 1]);
 	}
 
-	private function partOne(lines:Array<String>):Int {
-		var calls:Int = 1;
+	private function playBingo(lines:Array<String>):Void {
 		for (b in balls) {
 			for (c in 0...cardIndex.length) {
 				if (cardIndex[c].exists(b)) {
@@ -43,19 +47,8 @@ class Day04 {
 				}
 			}
 
-			var winner:Int = solve(b);
-			if (winner > 0) {
-				return winner;
-			}
-
-			calls++;
+			solve(b);
 		}
-
-		return 0;
-	}
-
-	private function partTwo(lines:Array<String>):Int {
-		return 0;
 	}
 
 	private function populateCards(cardData:String):Void {
@@ -92,7 +85,7 @@ class Day04 {
 		cardIndex = index;
 	}
 
-	private function solve(ball:Int):Int {
+	private function solve(ball:Int):Void {
 		for (c in 0...cardDeck.length) {
 			for (y in 0...sideLength) {
 				var xPoints:Array<Bool> = [];
@@ -107,14 +100,14 @@ class Day04 {
 					yPoints.push(yInfo.found);
 				}
 
-				if ((xPoints[0] && xPoints[1] && xPoints[2] && xPoints[3] && xPoints[4])
-					|| (yPoints[0] && yPoints[1] && yPoints[2] && yPoints[3] && yPoints[4])) {
-					return sumNotFound(cardDeck[c]) * ball;
+				if (((xPoints[0] && xPoints[1] && xPoints[2] && xPoints[3] && xPoints[4])
+					|| (yPoints[0] && yPoints[1] && yPoints[2] && yPoints[3] && yPoints[4]))
+					&& !winningCards.contains(cardDeck[c])) {
+					winningCards.push(cardDeck[c]);
+					winningTotals.push(sumNotFound(cardDeck[c]) * ball);
 				}
 			}
 		}
-
-		return 0;
 	}
 
 	private function sumNotFound(cardMap:Map<String, {point:Point, value:Int, found:Bool}>):Int {
