@@ -8,8 +8,8 @@ class Main {
 		var day:Day02 = new Day02("../inputs/Day02.txt");
 		#elseif (day == 3)
 		var day:Day03 = new Day03("../inputs/Day03.txt");
-		// var day:Day03 = new Day03("../inputs/Day03-Test.txt");
 		#elseif (day == 4)
+		// var day:Day04 = new Day04("../inputs/Day04-Test.txt");
 		var day:Day04 = new Day04("../inputs/Day04.txt");
 		#elseif (day == 5)
 		var day:Day05 = new Day05("../inputs/Day05.txt");
