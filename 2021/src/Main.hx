@@ -12,6 +12,7 @@ class Main {
 		// var day:Day04 = new Day04("../inputs/Day04-Test.txt");
 		var day:Day04 = new Day04("../inputs/Day04.txt");
 		#elseif (day == 5)
+		// var day:Day05 = new Day05("../inputs/Day05-Test.txt");
 		var day:Day05 = new Day05("../inputs/Day05.txt");
 		#elseif (day == 6)
 		var day:Day06 = new Day06("../inputs/Day06.txt");

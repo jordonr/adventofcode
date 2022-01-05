@@ -5,7 +5,6 @@ import haxe.macro.Compiler.IncludePosition;
 using Math;
 using StringTools;
 
-import haxe.crypto.Md5;
 import haxe.Json;
 import utils.ReadData;
 
