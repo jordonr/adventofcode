@@ -16,7 +16,7 @@ This is my repo for going through the 2015 Advent of Code.
 | Day 06  | **    |
 | Day 07  | **    |
 | Day 08  | **    |
-| Day 09  |  |
+| Day 09  | **    |
 | Day 10  |  |
 | Day 11  |  |
 | Day 12  |  |
