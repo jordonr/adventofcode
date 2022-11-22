@@ -1,4 +1,4 @@
-# Advent of Code 2021 - Solutions in Haxe!
+# Advent of Code 20222 - Solutions in Haxe!
 
 This is my repo for going through the 2021 Advent of Code.
 
