@@ -4,5 +4,5 @@
 --library permutation
 --dce full
 #--debug
---interp
-#--cpp bin/
+# --interp
+--cpp bin/

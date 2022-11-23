@@ -1,10 +1,7 @@
 package days;
 
-import haxe.display.JsonModuleTypes.JsonTypeParameters;
 import permutation.Permuter;
 import utils.ReadData;
-
-using Lambda;
 
 class Day09 {
 	public function new(path:String) {

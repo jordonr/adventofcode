@@ -22,6 +22,8 @@ class Main {
 		// var day:Day09 = new Day09("../inputs/Day09-Test.txt");
 		var day:Day09 = new Day09("../inputs/Day09.txt");
 		#elseif (day == 10)
+		// var day:Day10 = new Day10("1");
+		var day:Day10 = new Day10("1321131112");
 		#elseif (day == 11)
 		#elseif (day == 12)
 		#elseif (day == 13)
