@@ -2,13 +2,14 @@ package days;
 
 class Day10 {
 	public function new(data:String) {
-		partOne(data);
+		lookSay(data, 40);
+		lookSay(data, 50);
 	}
 
-	private function partOne(data:String):Void {
+	private function lookSay(data:String, looks:Int):Void {
 		var seed:String = data;
 		var lookSay:String = "";
-		for(l in 0...40) {
+		for(l in 0...looks) {
 			var cIndex = seed.charAt(0);
 			var track = "";
 			for(c in 0...seed.length + 1) {
@@ -32,7 +33,7 @@ class Day10 {
 			lookSay = "";
 		}
 
-		Sys.println(seed.length);
+		Sys.println("Length: " + seed.length);
 	}
 }
 

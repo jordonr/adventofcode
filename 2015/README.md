@@ -17,7 +17,7 @@ This is my repo for going through the 2015 Advent of Code.
 | Day 07  | **    |
 | Day 08  | **    |
 | Day 09  | **    |
-| Day 10  | *    |
+| Day 10  | **    |
 | Day 11  |  |
 | Day 12  |  |
 | Day 13  |  |
@@ -38,7 +38,7 @@ This is my repo for going through the 2015 Advent of Code.
 
 | Day           | Notes   |
 |:------------- |:------- |
-|         |  |
+| Day 10        | Currently the brute force method which is really really (really!) slow. |
 
 ### Running Haxe  
 `haxe build.hxml -D day=1`
