@@ -13,18 +13,19 @@ class Day11 {
 	var alphabet = "abcdefghijklmnopqrstuvwxyz";
 	
 	public function new(data:String) {
-		//~ partOne(data);
-		partOne("abcdefgh");
-
+		partOne(data);
 	}
 
 	private function partOne(data:String):Void {
 		var testPw:String = data;
 
-		if(checkAlpha(testPw) && checkBadChars(testPw) && checkDoubles(testPw)) {
-			Sys.println("Part 1: " + testPw);
-		} else {
-			incrementPassword(testPw, 0);
+		while(true) {
+			if(checkAlpha(testPw) && checkBadChars(testPw) && checkDoubles(testPw) && checkOld(testPw)) {
+				Sys.println("New Password: " + testPw);
+				break;
+			} else {
+				testPw = incrementPassword(testPw, 0);
+			}
 		}
 	}
 
@@ -34,10 +35,7 @@ class Day11 {
 		temp.reverse();
 		var again:Bool = true;
 
-		trace(pass);
-		trace(index);
-
-		if(alphabet.indexOf(temp[index]) >= 24) {
+		if(alphabet.indexOf(temp[index]) > 24) {
 			alphabetIndex = 0;
 		} else {
 			alphabetIndex = alphabet.indexOf(temp[index]) + 1;
@@ -49,7 +47,8 @@ class Day11 {
 		temp.reverse();
 
 		if(alphabetIndex == 0) {
-			incrementPassword(temp.join(''), index++);
+			index++;
+			return incrementPassword(temp.join(''), index);
 		}
 
 		return temp.join('');
@@ -91,6 +90,13 @@ class Day11 {
 		}
 		
 		return false;
+	}
+	
+	// Checks old passwords
+	private function checkOld(pass:String):Bool {
+		var oldPasswords = ['vzbxxyzz' => 1];
+		
+		return !oldPasswords.exists(pass);
 	}
 }
 
