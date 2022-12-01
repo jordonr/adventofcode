@@ -6,7 +6,7 @@ This is my repo for going through the 2021 Advent of Code.
 
 |  Day   | Stars | Language |   File   |
 | :----: | :---: | :------: | :------: |
-| Day 01 |       |   Haxe   | Day01.hx |
+| Day 01 | **    |   Haxe   | Day01.hx |
 | Day 02 |       |   Haxe   | Day02.hx |
 | Day 03 |       |   Haxe   | Day03.hx |
 | Day 04 |       |   Haxe   | Day04.hx |

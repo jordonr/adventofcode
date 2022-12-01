@@ -1,7 +1,5 @@
 package days;
 
-using StringTools;
-
 import utils.ReadData;
 
 class Day01 {
@@ -17,14 +15,39 @@ class Day01 {
 	}
 
 	private function partOne(numbers:Array<Int>):Int {
-		var deeper:Int = 0;
+		var mostCals:Int = 0;
+		var countCals:Int = 0;
+		
+		for(l in numbers) {
+			if(l == null) {
+				if(countCals > mostCals) {
+					mostCals = countCals;
+				}
+				
+				countCals = 0;
+			} else {
+				countCals += l;
+			}
+		}
 
-		return deeper;
+		return mostCals;
 	}
 
 	private function partTwo(numbers:Array<Int>):Int {
-		var deeper:Int = 0;
+		var countCals:Int = 0;
+		var elfsCals:Array<Int> = [];
+		
+		for(l in numbers) {
+			if(l == null) {
+				elfsCals.push(countCals);
+				countCals = 0;
+			} else {
+				countCals += l;
+			}
+		}
+		
+		elfsCals.sort((a, b) -> b - a);
 
-		return deeper;
+		return elfsCals[0] + elfsCals[1] + elfsCals[2];
 	}
 }
