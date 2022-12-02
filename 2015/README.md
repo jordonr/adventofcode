@@ -19,7 +19,7 @@ This is my repo for going through the 2015 Advent of Code.
 | Day 09  | **    |
 | Day 10  | **    |
 | Day 11  | **    |
-| Day 12  |  |
+| Day 12  | *    |
 | Day 13  |  |
 | Day 14  |  |
 | Day 15  |  |
