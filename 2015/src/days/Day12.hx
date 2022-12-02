@@ -23,13 +23,12 @@ For example:
 
 	private function partOne(data:String):Void {
 		var r = ~/(-?\d+),?/g;
-		var input = data;
+		var jsonString = data;
 		var total = 0;
 		
-		while(r.match(input)) {
-			//trace(Std.parseInt(r.matched(1)));
+		while(r.match(jsonString)) {
 			total += Std.parseInt(r.matched(1));
-			input = r.matchedRight();
+			jsonString = r.matchedRight();
 		}
 		
 		Sys.println('Part 1: ' + total);
