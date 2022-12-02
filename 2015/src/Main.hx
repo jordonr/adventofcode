@@ -27,6 +27,7 @@ class Main {
 		#elseif (day == 11)
 		var day:Day11 = new Day11("vzbxkghb");
 		#elseif (day == 12)
+		var day:Day12 = new Day12("../inputs/Day12.txt");
 		#elseif (day == 13)
 		#elseif (day == 14)
 		#elseif (day == 15)
