@@ -67,9 +67,32 @@ class Day03 {
 	}
 
 	private function partTwo(lines:Array<String>):Int {
-		var oxyValue:Int = 0;
-		var co2Value:Int = 0;
+		var count = 0;
+		var totalLines = lines.length - 2;
+		var total = 0;
+		
+		while(count < totalLines) {
+			var bag1 = lines[count];
+			var bag2 = lines[count + 1];
+			var bag3 = lines[count + 2];
+			var uniqueBag:Array<String> = [];
+			
+			for(p in 0...bag1.length) {
+				var item = bag1.charAt(p);
+				if(uniqueBag.indexOf(item) == -1) {
+					uniqueBag.push(item);
+				}
+			}
+			
+			for(c in 0...uniqueBag.length) {
+				if(bag2.indexOf(uniqueBag[c]) > -1 && bag3.indexOf(uniqueBag[c]) > -1) {
+					total += alphaValues[uniqueBag[c]];
+				}
+			}
+			
+			count += 3;
+		} 
 
-		return oxyValue * co2Value;
+		return total;
 	}
 }
