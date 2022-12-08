@@ -22,7 +22,7 @@ class Day03 {
 	var alphaValues:Map<String, Int> = [];
 	
 	public function new(path:String) {
-		var lines:Array<String> = ReadData.getLines(path);
+		var lines:Array<String> = ReadData.getLinesTrimmed(path);
 		//var lines:Array<String> = [
 		//"vJrwpWtwJgWrhcsFMMfFFhFp",
 		//"jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",

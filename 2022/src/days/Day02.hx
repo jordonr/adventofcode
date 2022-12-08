@@ -13,7 +13,7 @@ class Day02 {
 	private var failMoves:Map<String, String> = ["A" => "C", "B" => "A", "C" => "B"];
 	
 	public function new(path:String) {
-		var lines:Array<String> = ReadData.getLines(path);
+		var lines:Array<String> = ReadData.getLinesTrimmed(path);
 
 		Sys.println('Part 1: ' + partOne(lines));
 		Sys.println('Part 2: ' + partTwo(lines));

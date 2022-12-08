@@ -9,7 +9,7 @@ import utils.ReadData;
 class Day04 {
 
 	public function new(path:String) {
-		var lines:Array<String> = ReadData.getLines(path);
+		var lines:Array<String> = ReadData.getLinesTrimmed(path);
 		//lines = [
 			//'35-73,35-82',
 			//'9-27,10-80',

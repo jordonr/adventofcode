@@ -4,7 +4,7 @@ import utils.ReadData;
 
 class Day01 {
 	public function new(path:String) {
-		var lines:Array<String> = ReadData.getLines(path);
+		var lines:Array<String> = ReadData.getLinesTrimmed(path);
 
 		var numbers = lines.map(function(v) {
 			return Std.parseInt(v);
