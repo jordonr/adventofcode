@@ -12,57 +12,69 @@ import utils.ReadData;
 	Part 2 -
 ***/
 class Day05 {
-	var stacks:Array<Array<String>> = [[]];
+	var stackOne:Array<Array<String>> = [[]];
+	var stackTwo:Array<Array<String>> = [];
 	var instructions:Array<String> = [];
+	var stackInfo:Array<String> = [];
+	var regInstuct = ~/move (\d+) from (\d+) to (\d+)/g;
 
 	public function new(path:String) {
 		var lines:Array<String> = ReadData.getLines(path);
 		var seperator = lines.indexOf('');
 		
-		var stackInfo:Array<String> = lines.slice(0, seperator);
+		stackInfo = lines.slice(0, seperator);
 		instructions = lines.slice(seperator+1);
 
 		populateStacks(stackInfo);
 
 		Sys.println('Part 1: ');
 		partOne(instructions);
-		// Sys.println('Part 2: ' + partTwo(lines));
+		Sys.println("\nPart 2: ");
+		partTwo(instructions);
 	}
 
 	function partOne(instructions:Array<String>):Void {
-		var r = ~/move (\d+) from (\d+) to (\d+)/g;
-
+		
 		for(i in instructions) {
 			var instuct = i;
 
-			while(r.match(instuct)) {
-				var numBoxes = Std.parseInt(r.matched(1));
-				var from = Std.parseInt(r.matched(2));
-				var to = Std.parseInt(r.matched(3));
+			if(regInstuct.match(instuct)) {
+				var numBoxes = Std.parseInt(regInstuct.matched(1));
+				var from = Std.parseInt(regInstuct.matched(2));
+				var to = Std.parseInt(regInstuct.matched(3));
 
 				moveCrates(numBoxes, from, to);
-				instuct = r.matchedRight();
 			}
 		}
 
-		printStack();
+		printStack(stackOne);
 	}
 
-	function partTwo(numbers:Array<String>):Int {
-		var deeper:Int = 0;
+	function partTwo(numbers:Array<String>):Void {
+		for(i in instructions) {
+			var instuct = i;
 
-		return deeper;
+			if(regInstuct.match(instuct)) {
+				var numBoxes = Std.parseInt(regInstuct.matched(1));
+				var from = Std.parseInt(regInstuct.matched(2));
+				var to = Std.parseInt(regInstuct.matched(3));
+
+				moveCrates9001(numBoxes, from, to);
+			}
+		}
+
+		printStack(stackTwo);
 	}
 
 	function populateStacks(description:Array<String>):Void {
 		var regCrate = ~/(.{3})\s?/;
 		description.reverse();
 		var stackSize = description.shift();
-		stacks[0] = [];
+		stackOne[0] = [];
 
 		while(regCrate.match(stackSize)) {
 			var column = Std.parseInt(regCrate.matched(1));
-			stacks[column] = [];
+			stackOne[column] = [];
 			stackSize = regCrate.matchedRight();
 		}
 
@@ -74,22 +86,31 @@ class Day05 {
 				var box = regCrate.matched(1);
 			
 				if(box.contains("[")) {
-					stacks[column].push(box);
+					stackOne[column].push(box);
 				}
 
 				container = regCrate.matchedRight();
 				column++;
 			}
 		}
+
+		for(s in stackOne) {
+			stackTwo.push(s.copy());
+		}
 	}
 
 	function moveCrates(loops:Int, from:Int, to:Int) {
 		for(c in 0...loops) {
-			stacks[to].push(stacks[from].pop());
+			stackOne[to].push(stackOne[from].pop());
 		}
 	}
 
-	function printStack() {
+	function moveCrates9001(num:Int, from:Int, to:Int) {
+		var temp = stackTwo[to].concat(stackTwo[from].splice(num * -1, num));
+		stackTwo[to] = temp;
+	}
+
+	function printStack(stacks:Array<Array<String>>) {
 		for(s in stacks) {
 			for(c in s) {
 				Sys.print(c);
