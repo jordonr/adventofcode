@@ -21,6 +21,8 @@ class Main {
 		#elseif (day == 9)
 		var day:Day09 = new Day09("../inputs/Day09.txt");
 		#elseif (day == 10)
+		// var day:Day10 = new Day10("../inputs/Day10-Test.txt");
+		var day:Day10 = new Day10("../inputs/Day10.txt");
 		#elseif (day == 11)
 		#elseif (day == 12)
 		#elseif (day == 13)

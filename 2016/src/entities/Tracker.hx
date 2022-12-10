@@ -4,10 +4,10 @@ class Tracker {
   private var startX:Int = 0;
   private var startY:Int = 0;
   private var x:Int = 0;
-	private var y:Int = 0;
-	private var compass:String = 'N';
+  private var y:Int = 0;
+  private var compass:String = 'N';
 
-	public function new(x:Int, y:Int) {
+  public function new(x:Int, y:Int) {
     this.x = x;
     this.startX = x;
     this.y = y;
