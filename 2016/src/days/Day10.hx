@@ -9,15 +9,16 @@ using haxe.Int64;
 class Day10 {
 	var outputBin:Array<Array<String>> = [[]];
 	var _bots:Map<String, Bot> = [];
+	var _outputs:Map<String, String> = [];
 	
 	public function new(path:String) {
 		var data:Array<String> = ReadData.getLines(path);
 
-		Sys.println("Part 1: " + partOne(data));
-		//Sys.println("Part 2: " + part2(input));
+		Sys.println("Part 1: " + runBots(data.copy(), true));
+		Sys.println("Part 2: " + runBots(data.copy(), false));
 	}
 
-	private function partOne(data:Array<String>):String {
+	private function runBots(data:Array<String>, findChips:Bool):String {
 		var r = ~/^(bot \d+) gives low to (bot|output) (\d+) and high to (bot|output) (\d+)/;
 		var count = 0;
 		var leftovers = [];
@@ -33,20 +34,20 @@ class Day10 {
 				
 				if(_bots[botGiving].canProcess()) {
 
-					if(_bots[botGiving].foundChips()) {
+					if(_bots[botGiving].foundChips() && findChips) {
 						return botGiving;
 					}
 
 					if(getLow.indexOf("output") == -1) {
 						_bots[getLow].receiveChip(_bots[botGiving].giveLow());
 					} else {
-						_bots[botGiving].giveLow(); // Tossing for now
+						_outputs.set(getLow, _bots[botGiving].giveLow());
 					}
 					
 					if(getHigh.indexOf("output") == -1) {
 						_bots[getHigh].receiveChip(_bots[botGiving].giveHigh());
 					} else {
-						_bots[botGiving].giveHigh(); // Tossing for now
+						_outputs.set(getHigh, _bots[botGiving].giveHigh());
 					}
 				} else {
 					data.push(l);
@@ -54,7 +55,8 @@ class Day10 {
 			}
 		}
 
-		return null;
+		var output = Std.parseInt(_outputs["output 0"]) * Std.parseInt(_outputs["output 1"]) * Std.parseInt(_outputs["output 2"]);
+		return Std.string(output);
 	}
 
 	private function part2(input:String):Int64 {
