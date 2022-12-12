@@ -13,4 +13,4 @@ This is my repo for going through the Advent of Code.
 | [2019](https://github.com/jordonr/adventofcode/tree/master/2019) |   8   |
 | [2020](https://github.com/jordonr/adventofcode/tree/master/2020) |  21   |
 | [2021](https://github.com/jordonr/adventofcode/tree/master/2021) |   9   |
-| [2022](https://github.com/jordonr/adventofcode/tree/master/2022) |  10   |
+| [2022](https://github.com/jordonr/adventofcode/tree/master/2022) |  11   |

@@ -11,7 +11,7 @@ This is my repo for going through the 2021 Advent of Code.
 | Day 03 | **    |   Haxe   | Day03.hx |
 | Day 04 | **    |   Haxe   | Day04.hx |
 | Day 05 | **    |   Haxe   | Day05.hx |
-| Day 06 |       |   Haxe   | Day06.hx |
+| Day 06 | *     |   Haxe   | Day06.hx |
 | Day 07 |       |   Haxe   | Day07.hx |
 | Day 08 |       |   Haxe   | Day08.hx |
 | Day 09 |       |   Haxe   | Day09.hx |
