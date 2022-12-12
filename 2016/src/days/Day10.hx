@@ -1,10 +1,7 @@
 package days;
 
-import haxe.display.Display.Package;
 import entities.Bot;
 import utils.ReadData;
-
-using haxe.Int64;
 
 class Day10 {
 	var outputBin:Array<Array<String>> = [[]];
