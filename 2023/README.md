@@ -1,4 +1,4 @@
-# Advent of Code 20222 - Solutions in Haxe!
+# Advent of Code 20223 - Solutions in ${Language}!
 
 This is my repo for going through the 2022 Advent of Code.
 
@@ -6,17 +6,17 @@ This is my repo for going through the 2022 Advent of Code.
 
 |  Day   | Stars | Language |   File   |
 | :----: | :---: | :------: | :------: |
-| Day 01 | **    |   Haxe   | Day01.hx |
-| Day 02 | **    |   Haxe   | Day02.hx |
-| Day 03 | **    |   Haxe   | Day03.hx |
-| Day 04 | **    |   Haxe   | Day04.hx |
-| Day 05 | **    |   Haxe   | Day05.hx |
-| Day 06 | **    |   Haxe   | Day06.hx |
-| Day 07 |       |   Haxe   | Day07.hx |
-| Day 08 |       |   Haxe   | Day08.hx |
-| Day 09 |       |   Haxe   | Day09.hx |
-| Day 10 |       |   Haxe   | Day10.hx |
-| Day 11 |       |   Haxe   | Day11.hx |
+| Day 01 |       |          |          |
+| Day 02 |       |          |          |
+| Day 03 |       |          |          |
+| Day 04 |       |          |          |
+| Day 05 |       |          |          |
+| Day 06 |       |          |          |
+| Day 07 |       |          |          |
+| Day 08 |       |          |          |
+| Day 09 |       |          |          |
+| Day 10 |       |          |          |
+| Day 11 |       |          |          |
 | Day 12 |       |          |          |
 | Day 13 |       |          |          |
 | Day 14 |       |          |          |
@@ -37,7 +37,3 @@ This is my repo for going through the 2022 Advent of Code.
 | Day    | Notes  |
 | :----- | :----- |
 | Day 00 | Notes! |
-
-### Running Haxe
-
-`haxe build.hxml -D day=1`
