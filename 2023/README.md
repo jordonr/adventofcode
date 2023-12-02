@@ -1,12 +1,12 @@
-# Advent of Code 20223 - Solutions in ${Language}!
+# Advent of Code 2023 - Solutions in ${Language}!
 
-This is my repo for going through the 2022 Advent of Code.
+This is my repo for going through the 2023 Advent of Code.
 
 ## Status
 
 |  Day   | Stars | Language |   File   |
 | :----: | :---: | :------: | :------: |
-| Day 01 |       |          |          |
+| Day 01 |   *   | Swift    | Day01.swift |
 | Day 02 |       |          |          |
 | Day 03 |       |          |          |
 | Day 04 |       |          |          |
@@ -16,6 +16,7 @@ This is my repo for going through the 2022 Advent of Code.
 | Day 08 |       |          |          |
 | Day 09 |       |          |          |
 | Day 10 |       |          |          |
+| Day 11 |       |          |          |
 | Day 11 |       |          |          |
 | Day 12 |       |          |          |
 | Day 13 |       |          |          |
@@ -37,3 +38,7 @@ This is my repo for going through the 2022 Advent of Code.
 | Day    | Notes  |
 | :----- | :----- |
 | Day 00 | Notes! |
+
+### Running Swift
+
+`swift run`
