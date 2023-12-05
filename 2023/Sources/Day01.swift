@@ -3,8 +3,18 @@ import Glibc
 
 public class Day01: NSObject {
 
-    static func Part1() {
-        let input:String = try! String(contentsOfFile: "../inputs/Day01.txt")
+    let _inputPath:String
+    var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9",
+                "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "0"]
+
+    override init() {
+        _inputPath = "../inputs/Day01.txt"
+
+        super.init()
+    }
+
+    func Part1() {
+        let input:String = try! String(contentsOfFile: _inputPath)
         let inputLines:[String] = input.trimmingCharacters(in: .newlines).components(separatedBy: .newlines)
         var total:Int = 0
 
@@ -15,7 +25,51 @@ public class Day01: NSObject {
             total += (parts.first! * 10) + parts.last!
         }
 
-        print("Day 01: \(total)")
+        print("Day 01, Part 1: \(total)")
+    }
+
+    func Part2() {
+        let input:String = try! String(contentsOfFile: _inputPath)
+        let inputLines:[String] = input.trimmingCharacters(in: .newlines).components(separatedBy: .newlines)
+        let simpleNumbers = try! Regex("(one|two|three|four|five|six|seven|eight|nine|[0-9])")
+        var total:Int = 0
+        
+        for line in inputLines {
+            var firstNum:Int = 0
+            var lastNum:Int = 0
+            // print(line)
+
+            for c in 1...line.count {
+                // print(String(line.prefix(c)))
+                guard let found = try! simpleNumbers.firstMatch(in: String(line.prefix(c))) else { continue }
+                firstNum = getPartValue(String(found.0))
+                break
+            }
+
+            for c in 1...line.count {
+                // print(String(line.suffix(c)))
+                guard let found = try! simpleNumbers.firstMatch(in: String(line.suffix(c))) else { continue }
+                lastNum = getPartValue(String(found.0))
+                break
+            }
+
+            // print("\(firstNum)\(lastNum)")
+            // print("")
+
+            total += (firstNum * 10) + lastNum
+        }
+
+        print("Day 01, Part 2: \(total)")
+    }
+
+    func getPartValue(_ v:String) -> Int {
+        let textNumbers:[String:Int] = ["one": 1, "two": 2, "three": 3, "four": 4, "five":5 , "six": 6, "seven": 7, "eight": 8, "nine": 9]
+
+        if(v.count > 1) {
+            return textNumbers[v]!
+        } 
+
+        return Int(v)!
     }
 
 }
