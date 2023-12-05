@@ -4,8 +4,6 @@ import Glibc
 public class Day01: NSObject {
 
     let _inputPath:String
-    var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9",
-                "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "0"]
 
     override init() {
         _inputPath = "../inputs/Day01.txt"
@@ -37,24 +35,18 @@ public class Day01: NSObject {
         for line in inputLines {
             var firstNum:Int = 0
             var lastNum:Int = 0
-            // print(line)
 
             for c in 1...line.count {
-                // print(String(line.prefix(c)))
                 guard let found = try! simpleNumbers.firstMatch(in: String(line.prefix(c))) else { continue }
                 firstNum = getPartValue(String(found.0))
                 break
             }
 
             for c in 1...line.count {
-                // print(String(line.suffix(c)))
                 guard let found = try! simpleNumbers.firstMatch(in: String(line.suffix(c))) else { continue }
                 lastNum = getPartValue(String(found.0))
                 break
             }
-
-            // print("\(firstNum)\(lastNum)")
-            // print("")
 
             total += (firstNum * 10) + lastNum
         }
