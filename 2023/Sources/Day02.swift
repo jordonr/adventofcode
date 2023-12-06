@@ -44,11 +44,27 @@ public class Day02: NSObject {
     }
 
     func Part2() {
-        // let input:String = try! String(contentsOfFile: _inputPath)
-        // let inputLines:[String] = input.trimmingCharacters(in: .newlines).components(separatedBy: .newlines)
-        // var total:Int = 0
+        let inputLines:[String] = try! String(contentsOfFile: _inputPath).trimmingCharacters(in: .newlines).components(separatedBy: .newlines)
+        var total:Int = 0
 
-        // print("Day 02, Part 2: \(total)")
+        for line in inputLines {
+            var cubeMin:[String:Int] = [String:Int]()
+            let regexCubes = try! Regex("(\\d+)\\s(\\w+)")
+            let cubeSets:[String] = line.ranges(of: regexCubes).map { line[$0].trimmingCharacters(in: .whitespaces) }
+
+            for cs in cubeSets {
+                let parts = cs.components(separatedBy: " ")
+                let colorValue:Int = Int(parts[0])!
+
+                if(cubeMin[parts[1]] ?? -1 < colorValue) {
+                    cubeMin[parts[1]] = colorValue
+                }
+            }
+
+            total += cubeMin["red"]! * cubeMin["blue"]! * cubeMin["green"]!
+        }
+
+        print("Day 02, Part 2: \(total)")
     }
 
 }
