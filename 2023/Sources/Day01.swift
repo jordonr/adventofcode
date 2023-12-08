@@ -65,7 +65,3 @@ public class Day01: NSObject {
     }
 
 }
-
-
-
-
