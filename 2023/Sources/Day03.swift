@@ -34,9 +34,9 @@ public class Day03: NSObject
                     neighbors.append(inputMatrix[i][j-partLength-1]) // Left
                     neighbors.append(inputMatrix[i][j]) // Right
 
-                    for c in 0...partLength+1 {
-                        neighbors.append(inputMatrix[i-1][j-partLength-1+c]) // Top
-                        neighbors.append(inputMatrix[i+1][j-partLength-1+c]) // Bottom
+                    for c in -1...partLength {
+                        neighbors.append(inputMatrix[i-1][j-partLength+c]) // Top
+                        neighbors.append(inputMatrix[i+1][j-partLength+c]) // Bottom
                     }
                   
                     let markers:String = neighbors.replacingOccurrences(of: ".", with: "")
