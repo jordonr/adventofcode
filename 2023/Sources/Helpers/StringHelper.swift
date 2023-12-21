@@ -16,7 +16,7 @@ extension String {
             return results.map {
                 String(self[Range($0.range, in: self)!])
             }
-        } catch let error {
+        } catch _ {
             return []
         }
     }

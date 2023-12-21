@@ -3,7 +3,6 @@ import Glibc
 
 public class Day03: NSObject 
 {
-
     let _inputPath:String
     let _inputData:[String]
 
