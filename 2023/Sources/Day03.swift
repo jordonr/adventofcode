@@ -1,7 +1,6 @@
 import Foundation
 import Glibc 
 
-
 public class Day03: NSObject 
 {
 
@@ -51,29 +50,44 @@ public class Day03: NSObject
         print("Day 02, Part 1: \(total)")
     }
 
-    func Part2() 
+    func Part2()
     {
-        // let inputLines:[String] = _inputData
-        // var total:Int = 0
+        let inputMatrix:[[Character]] = enterMatrix(_inputData)
+        let pointMatrix = pointMatrix(inputMatrix)
+        let rowLength:Int = inputMatrix[0].count - 1
+        let neighbors:[Int] = [-1, 0, 1]
+        var gearNumbers:Set<Int> = []
+        var total:Int = 0
 
-        // for l in 0...inputLines.count-1 {
+        for i in 1...inputMatrix.count-2 {
+
+            for j in 0...rowLength {
             
-        //     print(inputLines[l])
-        //     print(inputLines[l].charAt(3))
-        // }
+                if(inputMatrix[i][j] != "*") {
+                    continue
+                }
 
-        // print("Day 02, Part 2: \(total)")
+                for n in neighbors {
+                    gearNumbers.insert(pointMatrix[i-1][j+n])
+                    gearNumbers.insert(pointMatrix[i][j+n])
+                    gearNumbers.insert(pointMatrix[i+1][j+n])
+                }
+
+                if(gearNumbers.count == 3) {                
+                    total += gearNumbers.reduce(1) {$0*$1}
+                }
+
+                gearNumbers = []
+            }
+        }
+
+        print("Day 02, Part 2: \(total)")
     }
 
     func enterMatrix(_ lines:[String]) -> [[Character]]
     {
         var stringMatrix:[[Character]] = [[Character]]()
-        var buffer:[Character] = [Character]()
-
-        // Missing Perl's "."x10 right now
-        for _ in 0...lines[0].count {
-            buffer.append(".")
-        }
+        let buffer:[Character] = Array(repeating: ".", count: lines[0].count+2)
 
         stringMatrix.append(buffer)
 
@@ -87,5 +101,33 @@ public class Day03: NSObject
         stringMatrix.append(buffer)
 
         return stringMatrix
+    }
+
+    func pointMatrix(_ matrix:[[Character]]) -> [[Int]]
+    {
+        let rowCount = matrix.count - 1
+        let colCount = matrix[0].count - 1
+
+        var coords:[[Int]] = [[Int]]()
+        for row in 0...rowCount {
+            var rowNumbers:[Int] = Array(repeating: 1, count: colCount+1)
+            var tracker:String = ""
+
+            for col in 0...colCount {
+                if(matrix[row][col].isNumber) {
+                    tracker.append(matrix[row][col])
+                } else if(tracker.count > 0) {
+                    for c in 1...tracker.count {
+                        rowNumbers[col - c] = Int(tracker)!
+                    }
+
+                    tracker = ""
+                }
+            }
+
+            coords.append(rowNumbers)
+        }
+
+        return coords
     }
 }
