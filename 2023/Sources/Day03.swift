@@ -46,7 +46,7 @@ public class Day03: NSObject
             }
         }
 
-        print("Day 02, Part 1: \(total)")
+        print("Day 03, Part 1: \(total)")
     }
 
     func Part2()
@@ -80,7 +80,7 @@ public class Day03: NSObject
             }
         }
 
-        print("Day 02, Part 2: \(total)")
+        print("Day 03, Part 2: \(total)")
     }
 
     func enterMatrix(_ lines:[String]) -> [[Character]]
