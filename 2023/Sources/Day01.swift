@@ -1,5 +1,7 @@
 import Foundation
-import Glibc 
+#if os(Linux)
+import Glibc
+#endif
 
 public class Day01: NSObject {
 

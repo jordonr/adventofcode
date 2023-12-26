@@ -1,5 +1,7 @@
 import Foundation
-import Glibc 
+#if os(Linux)
+import Glibc
+#endif
 
 // 12 red cubes, 13 green cubes, and 14 blue cubes
 
