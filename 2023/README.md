@@ -12,7 +12,7 @@ This is my repo for going through the 2023 Advent of Code.
 | Day 04 |  **   | Swift    | Day04.swift |
 | Day 05 |  **   | Swift    | Day05.swift |
 | Day 06 |  **   | Swift    | Day06.swift |
-| Day 07 |       |          |          |
+| Day 07 |   *   | Swift    | Day07.swift |
 | Day 08 |       |          |          |
 | Day 09 |       |          |          |
 | Day 10 |       |          |          |
