@@ -4,4 +4,4 @@
 let day = Day07()
 
 day.Part1()
-// day.Part2()
+day.Part2()
