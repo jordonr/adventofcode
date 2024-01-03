@@ -1,7 +1,7 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
-let day = Day07()
+let day = Day08()
 
 day.Part1()
-day.Part2()
+// day.Part2()
