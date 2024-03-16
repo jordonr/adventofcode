@@ -42,3 +42,6 @@ This is my repo for going through the 2015 Advent of Code.
 
 ### Running Haxe  
 `haxe build.hxml -D day=1`
+
+### Running Swift
+`swift Source/Day12.swift`
