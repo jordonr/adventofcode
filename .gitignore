@@ -10,3 +10,4 @@ test.*
 .vstags
 .vscode
 .idea
+*.kate-swp
