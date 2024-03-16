@@ -4,6 +4,7 @@ using StringTools;
 
 import haxe.Json;
 import utils.ReadData;
+import tjson.TJSON;
 
 class Day12 {
 	/**
@@ -21,7 +22,7 @@ For example:
 	
 	public function new(path:String) {
 		var data:String = ReadData.getFile(path);
-		// partOne(data, 1);
+		//partOne(data, 1);
 		partTwo(data);
 	}
 
@@ -38,93 +39,34 @@ For example:
 		Sys.println('Part ' + part + ': ' + total);
 	}
 
-	private function partTwo(data:String):Void {
-		// To High:121262
-				
+	private function partTwo(data:String):Void {				
 		var total = 0;
+		/*
 		var rfr = ~/(?<={)[^{]+:"red"[^}]+(?=})/g;
 		var rfr2 = ~/{[^}]+:"red"}/g;
+		var rStillRed = ~/:"red"/g;
 
-		var cleaned = clean(data);
-
-		trace(cleaned);
-
-		// trace(cleaned.length);
-		// cleaned = rfr.replace(cleaned, '');
-		// trace(cleaned.length);
-		// var cleaned = rfr2.replace(cleaned, '');
-		// trace(cleaned.length);
+		//var cleaned = rfr.replace(data, '');
+		//cleaned = rfr.replace(cleaned, '');
+		//trace(cleaned);
+		var cleaned = rfr2.replace(data, '');
+		trace(cleaned.length);
 		
-		// partOne(cleaned, 2);
-		
-	}
-
-	private function clean(data:String):String {
-		var bs = ~/{/g;
-		var be = ~/}/g;
-		var nl = ~/\n/g;
-		var bad = ~/\n{.*:"red".*}\n/g;
-		var red = ~/:"red"/g;
-		
-		data = bs.replace(data, "\n{");
-		data = be.replace(data, "}\n");
-		data = bad.replace(data, '');
-		data = nl.replace(data, '');
-
-		trace(data.length);
-
-		if(data.length == 31209) {
-			trace(data);
-			Sys.exit(0);
+		if(rStillRed.match(cleaned)) {
+			partTwo(cleaned);
 		}
 		
-
-		if(red.match(data)) {
-			data = clean(data);
-		}
-
+		partOne(cleaned, 2);
+		// To High:121262
+		// To Low:  34639
+		*/
+		var jsonData = TJSON.parse(data);
 		
+		trace(jsonData);
 		
-		return data;
-		
-		// partOne(cleaned, 2);
-		
+		//for(e in jsonData) {
+			//trace(e);
+		//}
 	}
-
-	// private function listObjects(data:String):Array<String> {
-	// 	var parseMe:String = data;
-	// 	var objects:Array<String> = [];
-	// 	var objectLine:String = "";
-	// 	var startBraceAt:Int = 0;
-	// 	var endBraceAt:Int = 0;
-	// 	var braceFound:Bool = false;
-	// 	var redFound:Bool = false;
-
-	// 	// parseMe = '{"e":70,"a":"green","d":"blue","j":12,"c":69,"h":"orange","b":92,"g":"yellow","f":"green","i":121}';
-
-	// 	for(c in 0...parseMe.length) {
-			
-	// 		if(parseMe.charAt(c) == "{" && !braceFound) {
-	// 			braceFound = true;
-	// 			startBraceAt = c;
-	// 		} else if(parseMe.charAt(c) == "}") {
-	// 			braceCounter--;
-	// 		} else if(parseMe.substr(c, 6) == ':"red"') {
-	// 			redFound = true;
-	// 		}
-
-	// 		if(braceCounter == 0 && braceFound) {
-	// 			if(redFound) {
-	// 				objects.push(objectLine);
-	// 				redFound = false;
-	// 			}
-				
-	// 			braceFound = false;
-	// 			objectLine = "";
-	// 		}
-	// 	}
-
-	// 	return objects;
-	// }
 }
 
