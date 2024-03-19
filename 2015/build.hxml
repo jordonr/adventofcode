@@ -2,7 +2,6 @@
 -cp src
 -main Main
 --library permutation
---library tjson
 --dce full
 #--debug
 --interp

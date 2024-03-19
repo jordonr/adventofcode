@@ -19,16 +19,16 @@ class Main {
 		#elseif (day == 8)
 		var day:Day08 = new Day08("../inputs/Day08.txt");
 		#elseif (day == 9)
-		// var day:Day09 = new Day09("../inputs/Day09-Test.txt");
 		var day:Day09 = new Day09("../inputs/Day09.txt");
 		#elseif (day == 10)
-		// var day:Day10 = new Day10("1");
 		var day:Day10 = new Day10("1321131112");
 		#elseif (day == 11)
 		var day:Day11 = new Day11("vzbxkghb");
 		#elseif (day == 12)
 		var day:Day12 = new Day12("../inputs/Day12.txt");
 		#elseif (day == 13)
+		// 		var day:Day13 = new Day13("../inputs/Day13-Test.txt");
+		var day:Day13 = new Day13("../inputs/Day13.txt");
 		#elseif (day == 14)
 		#elseif (day == 15)
 		#elseif (day == 16)
