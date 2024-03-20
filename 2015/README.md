@@ -20,7 +20,7 @@ This is my repo for going through the 2015 Advent of Code.
 | Day 10  | **    | Haxe  |
 | Day 11  | **    | Haxe  |
 | Day 12  | **    | Haxe & Swift |
-| Day 13  | * | Haxe  |
+| Day 13  | **    | Haxe  |
 | Day 14  |  |
 | Day 15  |  |
 | Day 16  |  |

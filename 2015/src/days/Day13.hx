@@ -8,11 +8,11 @@ import permutation.Permuter;
 class Day13 {
 	public function new(path:String) {
 		var data:Array<String> = ReadData.getLines(path);
-		partOne(data);
-		// 		partTwo(data);
+		sitPeople(data, 1);
+		sitPeople(data, 2);
 	}
 
-	private function partOne(data:Array<String>):Void {
+	private function sitPeople(data:Array<String>, part:Int):Void {
 		var max = 0;
 		// Groups: person gain|lose value friend
 		var r = ~/^(\w+) would (gain|lose) (\d+) happiness units by sitting next to (\w+)./g;
@@ -39,8 +39,17 @@ class Day13 {
 
 		var peopleArray = new Array<String>();
 
+		if (part == 2) {
+			peopleArray.push("Me");
+			tableValues["Me"] = new Map<String, Int>();
+		}
+
 		for (k in people.keys()) {
 			peopleArray.push(k);
+			if (part == 2) {
+				tableValues["Me"].set(k, 0);
+				tableValues[k].set("Me", 0);
+			}
 		}
 
 		var peoplePerms = new Permuter(peopleArray);
@@ -51,12 +60,12 @@ class Day13 {
 			for (i in 0...p.length) {
 				var left:Int = (i == 0 ? p.length - 1 : i - 1);
 				var right:Int = (i == p.length - 1 ? 0 : i + 1);
-				total += tableValues[p[i]][p[left]] + tableValues[p[i]].get(p[right]);
+				total += tableValues[p[i]][p[left]] + tableValues[p[i]][p[right]];
 			}
 
 			max = (total > max ? total : max);
 		}
 
-		Sys.println('Part 1: ' + max);
+		Sys.println('Part ' + part + ': ' + max);
 	}
 }
