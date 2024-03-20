@@ -8,6 +8,8 @@ class Reindeer {
 	private var _go:Bool;
 	private var _travelTime:Int;
 
+	public var points:Int;
+
 	public function new(speed:Int, flightTime:Int, restTime:Int) {
 		_speed = speed;
 		_flightTime = flightTime;
@@ -15,6 +17,8 @@ class Reindeer {
 		_distance = 0;
 		_go = true;
 		_travelTime = 0;
+
+		points = 0;
 	}
 
 	public function tick():Void {
