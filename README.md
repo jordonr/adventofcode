@@ -6,7 +6,7 @@ This is my repo for going through the Advent of Code.
 
 |                               Year                               | Stars |
 | :--------------------------------------------------------------: | :---: |
-| [2015](https://github.com/jordonr/adventofcode/tree/master/2015) |  26   |
+| [2015](https://github.com/jordonr/adventofcode/tree/master/2015) |  28   |
 | [2016](https://github.com/jordonr/adventofcode/tree/master/2016) |  20   |
 | [2017](https://github.com/jordonr/adventofcode/tree/master/2017) |  16   |
 | [2018](https://github.com/jordonr/adventofcode/tree/master/2018) |  10   |
