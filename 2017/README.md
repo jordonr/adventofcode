@@ -12,7 +12,7 @@ This is my repo for going through the 2017 Advent of Code.
 | Day 04        | 2 Stars | Perl     | 04-Solution.pl  |
 | Day 05        | 2 Stars | PHP      | 05-Solution.php |
 | Day 06        | 2 Stars | PHP      | 06-Solution.php |
-| Day 07        | 0 Stars |||
+| Day 07        | 1 Stars | Haxe  | Day07.hx  |
 | Day 08        | 0 Stars |||
 | Day 09        | 0 Stars |||
 | Day 10        | 0 Stars |||

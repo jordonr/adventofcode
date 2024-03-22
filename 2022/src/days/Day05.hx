@@ -18,9 +18,9 @@ class Day05 {
 	public function new(path:String) {
 		var lines:Array<String> = ReadData.getLines(path);
 		var seperator = lines.indexOf('');
-		
+
 		stackInfo = lines.slice(0, seperator);
-		instructions = lines.slice(seperator+1);
+		instructions = lines.slice(seperator + 1);
 
 		populateStacks(stackInfo);
 
@@ -31,11 +31,10 @@ class Day05 {
 	}
 
 	function partOne(instructions:Array<String>):Void {
-		
-		for(i in instructions) {
+		for (i in instructions) {
 			var instuct = i;
 
-			if(regInstuct.match(instuct)) {
+			if (regInstuct.match(instuct)) {
 				var numBoxes = Std.parseInt(regInstuct.matched(1));
 				var from = Std.parseInt(regInstuct.matched(2));
 				var to = Std.parseInt(regInstuct.matched(3));
@@ -48,10 +47,10 @@ class Day05 {
 	}
 
 	function partTwo(numbers:Array<String>):Void {
-		for(i in instructions) {
+		for (i in instructions) {
 			var instuct = i;
 
-			if(regInstuct.match(instuct)) {
+			if (regInstuct.match(instuct)) {
 				var numBoxes = Std.parseInt(regInstuct.matched(1));
 				var from = Std.parseInt(regInstuct.matched(2));
 				var to = Std.parseInt(regInstuct.matched(3));
@@ -69,20 +68,20 @@ class Day05 {
 		var stackSize = description.shift();
 		stackOne[0] = [];
 
-		while(regCrate.match(stackSize)) {
+		while (regCrate.match(stackSize)) {
 			var column = Std.parseInt(regCrate.matched(1));
 			stackOne[column] = [];
 			stackSize = regCrate.matchedRight();
 		}
 
-		for(d in description) {
+		for (d in description) {
 			var column = 1;
 			var container = d;
-			
-			while(regCrate.match(container)) {
+
+			while (regCrate.match(container)) {
 				var box = regCrate.matched(1);
-			
-				if(box.contains("[")) {
+
+				if (box.contains("[")) {
 					stackOne[column].push(box);
 				}
 
@@ -91,13 +90,13 @@ class Day05 {
 			}
 		}
 
-		for(s in stackOne) {
+		for (s in stackOne) {
 			stackTwo.push(s.copy());
 		}
 	}
 
 	function moveCrates(loops:Int, from:Int, to:Int) {
-		for(c in 0...loops) {
+		for (c in 0...loops) {
 			stackOne[to].push(stackOne[from].pop());
 		}
 	}
@@ -108,14 +107,12 @@ class Day05 {
 	}
 
 	function printStack(stacks:Array<Array<String>>) {
-		for(s in stacks) {
-			for(c in s) {
+		for (s in stacks) {
+			for (c in s) {
 				Sys.print(c);
 			}
 
 			Sys.print("\n");
 		}
 	}
-
-	
 }
