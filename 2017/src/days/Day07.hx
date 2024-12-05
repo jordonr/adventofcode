@@ -5,9 +5,11 @@ import utils.ReadData;
 using StringTools;
 
 class Day07 {
+	private var _rootTower:String;
+
 	public function new(path:String) {
 		var data:Array<String> = ReadData.getLines(path);
-		// 		partOne(data);
+		partOne(data);
 		partTwo(data);
 	}
 
@@ -29,18 +31,20 @@ class Day07 {
 
 		for (p in parents) {
 			if (!children.contains(p)) {
-				trace(p);
-				base = p;
+				_rootTower = p;
+				break;
 			}
 		}
 
-		Sys.println('Part 1: ' + base);
+		Sys.println('Part 1: ' + _rootTower);
 	}
 
 	private function partTwo(data:Array<String>):Void {
 		var badWeight = 0;
+		var previousWeight = 0;
 		var parrentChildren:Map<String, Array<String>> = new Map<String, Array<String>>();
 		var programWeight:Map<String, Int> = new Map<String, Int>();
+		var towerWeight:Map<String, Array<Int>> = new Map<String, Array<Int>>();
 		var parents = [];
 		var rParents = ~/(\w+)\s\((\d+)\)/g;
 
@@ -58,10 +62,48 @@ class Day07 {
 			}
 		}
 
+		function findUnbalanced(tower:String):Void {
+
+			if(!parrentChildren.exists(tower)) {
+				return;
+			}
+	
+			var weight:Int = programWeight[tower];
+			for (c in parrentChildren[tower]) {
+				findUnbalanced(c);
+				weight += programWeight[c]; 
+			}
+
+			trace(tower, weight);
+	
+			if(!towerWeight.exists(tower)) {
+				towerWeight[tower] = new Array<Int>();
+			}	
+			
+			towerWeight[tower].push(weight);
+		}
+
+		
+		findUnbalanced(_rootTower);
+
+		trace(towerWeight);
+
 		for (p => cArray in parrentChildren) {
-			trace(p, cArray);
+			var inspector:Map<Int, String> = new Map<Int, String>();
+			for(c in cArray) {
+				trace(p, towerWeight[c]);
+				if(towerWeight.exists(c)) {
+					trace(towerWeight[c]);
+					// inspector.set(towerWeight[c], p);
+				}
+			}
+
+			trace(inspector);
 		}
 
 		Sys.println('Part 2: ' + badWeight);
+
+		
 	}
+
 }
