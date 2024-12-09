@@ -8,7 +8,7 @@ This is my repo for going through the 2024 Advent of Code.
 | :----: | :---: | :------: | :------: |
 | Day 01 |  **   | Swift    | Day01.swift |
 | Day 02 |  **   | Swift    | Day02.swift |
-| Day 03 |   *   | Swift    | Day03.swift |
+| Day 03 |  **   | Swift    | Day03.swift |
 | Day 04 |     |     |  |
 | Day 05 |     |     |  |
 | Day 06 |     |     |  |
