@@ -38,6 +38,25 @@ public class Day03: NSObject {
 
     func Part2() {
         var total: Int = 0
+        let needle: String = "(do\\(\\))|(don't\\(\\))|mul\\((\\d{1,3}),(\\d{1,3})\\)"
+        var doer: Bool = true
+
+        for line in _inputData {
+            let commands: [String] = line.matchesByRegex(for: needle)
+
+            for c in 0...commands.count - 1 {
+                if commands[c].contains("do()") {
+                    doer = true
+                } else if commands[c].contains("don't()") {
+                    doer = false
+                } else if doer && commands[c].contains("mul(") {
+                    let mul: [Int] = commands[c].split(separator: ",").map {
+                        $0.filter { "0123456789".contains($0) }
+                    }.map { Int($0)! }
+                    total += mul[0] * mul[1]
+                }
+            }
+        }
 
         print("Day 03, Part 2: \(total)")
     }
