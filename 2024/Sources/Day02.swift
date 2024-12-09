@@ -61,7 +61,7 @@ public class Day02: NSObject {
         for i in 1...parts.count - 2 {
             let diffBack: Int = parts[i - 1] - parts[i]
             let diffForward: Int = parts[i + 1] - parts[i]
-            let partSet = Set(parts.map { $0 })
+            let partSet = Set(parts)
 
             if abs(diffBack) > 3 || abs(diffForward) > 3 {
                 safe = false
