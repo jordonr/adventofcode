@@ -58,6 +58,20 @@ public class Day04: NSObject {
 
     func Part2() {
         var total: Int = 0
+        let grid: [[Substring]] = makeGrid()
+        let rBound: Int = grid.count - 2
+        let cBound: Int = grid[0].count - 2
+
+        for r in 1...rBound {
+            var backSlash: String = ""
+            var slash: String = ""
+
+            for c in 1...cBound {
+                backSlash = "\(grid[r-1][c-1])\(grid[r][c])\(grid[r+1][c+1])"
+                slash = "\(grid[r+1][c-1])\(grid[r][c])\(grid[r-1][c+1])"
+                total += crossTest(left: backSlash, right: slash)
+            }
+        }
 
         print("Day 04, Part 2: \(total)")
     }
@@ -79,6 +93,20 @@ public class Day04: NSObject {
         let test2 = String(test1.reversed())
 
         if test1 == xmas || test2 == xmas {
+            return 1
+        }
+
+        return 0
+    }
+
+    func crossTest(left: String, right: String) -> Int {
+        let xmas: String = "MAS"
+        let test1 = left
+        let test2 = String(test1.reversed())
+        let test3 = right
+        let test4 = String(test3.reversed())
+
+        if (test1 == xmas || test2 == xmas) && (test3 == xmas || test4 == xmas) {
             return 1
         }
 
