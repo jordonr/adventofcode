@@ -52,6 +52,21 @@ public class Day05: NSObject {
 
     func Part2() {
         var total: Int = 0
+        parseInput()
+
+        for p in _pages {
+            let pageList = p.split(separator: ",")
+
+            for i in 0...pageList.count - 2 {
+                let ruleKey: String = "\(pageList[i])|\(pageList[i+1])"
+
+                if _rules[ruleKey] == nil {
+                    total += fixBadOrder(pages: pageList)
+                    break
+                }
+            }
+
+        }
 
         print("Day 05, Part 2: \(total)")
     }
@@ -72,5 +87,32 @@ public class Day05: NSObject {
             }
         }
 
+    }
+
+    func fixBadOrder(pages: [Substring]) -> Int {
+        var pageList = pages
+        var subTotal: Int = 0
+
+        for i in 0...pageList.count - 2 {
+            let ruleKey: String = "\(pageList[i])|\(pageList[i+1])"
+
+            if _rules[ruleKey] != nil {
+                subTotal += 1
+            } else {
+                let temp = pageList[i]
+                pageList[i] = pageList[i + 1]
+                pageList[i + 1] = temp
+
+                return fixBadOrder(pages: pageList)
+            }
+
+            if subTotal == pageList.count - 1 {
+                let middle: Int = Int(pageList.count / 2)
+
+                return Int(pageList[middle])!
+            }
+        }
+
+        return 0
     }
 }
