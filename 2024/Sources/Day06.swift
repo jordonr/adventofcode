@@ -44,21 +44,14 @@ public class Day06: NSObject {
             var map = baseMap
             map[coords[0]][coords[1]] = "O"
 
-            //print(baseMap[coords[0]])
-            //print(map[coords[0]])
-
             let lb: Labguard = Labguard(map: map)
             lb.setPosition(pos: position)
 
-            let t: Bool = lb.move()
-            //print(t)
-            if !t {
+            if !lb.move() {
                 total += 1
             }
         }
 
-        // To Hight: 5370
-        // To Low: 1585
         print("Day 06, Part 2: \(total)")
     }
 
