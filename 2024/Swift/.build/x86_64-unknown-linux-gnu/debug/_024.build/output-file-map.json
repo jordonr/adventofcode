@@ -1,0 +1,59 @@
+{
+  "": {
+    "swift-dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/master.swiftdeps"
+  },
+  "/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day01.swift": {
+    "dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day01.d",
+    "object": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day01.swift.o",
+    "swiftmodule": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day01~partial.swiftmodule",
+    "swift-dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day01.swiftdeps"
+  },
+  "/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day02.swift": {
+    "dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day02.d",
+    "object": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day02.swift.o",
+    "swiftmodule": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day02~partial.swiftmodule",
+    "swift-dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day02.swiftdeps"
+  },
+  "/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day03.swift": {
+    "dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day03.d",
+    "object": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day03.swift.o",
+    "swiftmodule": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day03~partial.swiftmodule",
+    "swift-dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day03.swiftdeps"
+  },
+  "/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day04.swift": {
+    "dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day04.d",
+    "object": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day04.swift.o",
+    "swiftmodule": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day04~partial.swiftmodule",
+    "swift-dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day04.swiftdeps"
+  },
+  "/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day05.swift": {
+    "dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day05.d",
+    "object": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day05.swift.o",
+    "swiftmodule": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day05~partial.swiftmodule",
+    "swift-dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day05.swiftdeps"
+  },
+  "/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day06.swift": {
+    "dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day06.d",
+    "object": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day06.swift.o",
+    "swiftmodule": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day06~partial.swiftmodule",
+    "swift-dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day06.swiftdeps"
+  },
+  "/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day07.swift": {
+    "dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day07.d",
+    "object": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day07.swift.o",
+    "swiftmodule": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day07~partial.swiftmodule",
+    "swift-dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day07.swiftdeps"
+  },
+  "/home/jordonr/Public/adventofcode/2024/Swift/Sources/Helpers/StringHelper.swift": {
+    "dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/StringHelper.d",
+    "object": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/StringHelper.swift.o",
+    "swiftmodule": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/StringHelper~partial.swiftmodule",
+    "swift-dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/StringHelper.swiftdeps"
+  },
+  "/home/jordonr/Public/adventofcode/2024/Swift/Sources/main.swift": {
+    "dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/main.d",
+    "object": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/main.swift.o",
+    "swiftmodule": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/main~partial.swiftmodule",
+    "swift-dependencies": "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/main.swiftdeps"
+  }
+}

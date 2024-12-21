@@ -1,0 +1,73 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "2024-x86_64-unknown-linux-gnu-debug.exe": ["<2024-x86_64-unknown-linux-gnu-debug.exe>"]
+  "2024-x86_64-unknown-linux-gnu-debug.module": ["<2024-x86_64-unknown-linux-gnu-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<2024-x86_64-unknown-linux-gnu-debug.exe>","<2024-x86_64-unknown-linux-gnu-debug.module>"]
+  "test": ["<2024-x86_64-unknown-linux-gnu-debug.exe>","<2024-x86_64-unknown-linux-gnu-debug.module>"]
+default: "main"
+nodes:
+  "/home/jordonr/Public/adventofcode/2024/Swift/Sources/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/2024.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day01.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day02.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day03.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day04.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day05.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day06.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day07.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/StringHelper.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/_024.swiftmodule.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/main.swift.o"]
+    outputs: ["/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/2024.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/2024.product/Objects.LinkFileList"
+
+  "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/_024.swiftmodule.o":
+    tool: shell
+    inputs: ["/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/Modules/_024.swiftmodule"]
+    outputs: ["/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/_024.swiftmodule.o"]
+    description: "Wrapping AST for 2024 for debugging"
+    args: ["/usr/lib/swift/bin/swiftc","-modulewrap","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/Modules/_024.swiftmodule","-o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/_024.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day01.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day02.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day03.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day04.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day05.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day06.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day07.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Helpers/StringHelper.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/main.swift"]
+    outputs: ["/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/sources"]
+    description: "Write auxiliary file /home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/sources"
+
+  "/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/swift-version-5BD8B568FD16BF8B.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/usr/lib/swift/bin/swiftc"]
+    outputs: ["/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/swift-version-5BD8B568FD16BF8B.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/swift-version-5BD8B568FD16BF8B.txt"
+
+  "<2024-x86_64-unknown-linux-gnu-debug.exe>":
+    tool: phony
+    inputs: ["/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/2024"]
+    outputs: ["<2024-x86_64-unknown-linux-gnu-debug.exe>"]
+
+  "<2024-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day01.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day02.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day03.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day04.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day05.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day06.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day07.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/StringHelper.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/main.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/Modules/_024.swiftmodule"]
+    outputs: ["<2024-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "C.2024-x86_64-unknown-linux-gnu-debug.exe":
+    tool: shell
+    inputs: ["/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day01.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day02.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day03.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day04.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day05.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day06.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day07.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/StringHelper.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/_024.swiftmodule.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/main.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/2024.product/Objects.LinkFileList"]
+    outputs: ["/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/2024"]
+    description: "Linking ./.build/x86_64-unknown-linux-gnu/debug/2024"
+    args: ["/usr/lib/swift/bin/swiftc","-L","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug","-o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/2024","-module-name","_024","-emit-executable","-Xlinker","--defsym","-Xlinker","main=_024_main","-Xlinker","-rpath=$ORIGIN","@/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/2024.product/Objects.LinkFileList","-target","x86_64-unknown-linux-gnu","-g"]
+
+  "C.2024-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day01.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day02.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day03.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day04.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day05.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day06.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Day07.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/Helpers/StringHelper.swift","/home/jordonr/Public/adventofcode/2024/Swift/Sources/main.swift","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/swift-version-5BD8B568FD16BF8B.txt","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/sources"]
+    outputs: ["/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day01.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day02.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day03.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day04.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day05.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day06.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/Day07.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/StringHelper.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/main.swift.o","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/Modules/_024.swiftmodule"]
+    description: "Compiling Swift Module '_024' (9 sources)"
+    args: ["/usr/lib/swift/bin/swiftc","-module-name","_024","-emit-dependencies","-emit-module","-emit-module-path","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/Modules/_024.swiftmodule","-output-file-map","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/output-file-map.json","-incremental","-c","@/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/_024.build/sources","-I","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-enable-batch-mode","-index-store-path","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/home/jordonr/Public/adventofcode/2024/Swift/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","_024_main","-color-diagnostics","-swift-version","5","-g","-Xcc","-fPIC","-Xcc","-g","-package-name","swift","-Xcc","-fno-omit-frame-pointer"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/home/jordonr/Public/adventofcode/2024/Swift/Sources/","/home/jordonr/Public/adventofcode/2024/Swift/Package.swift","/home/jordonr/Public/adventofcode/2024/Swift/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
