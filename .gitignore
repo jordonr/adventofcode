@@ -1,5 +1,6 @@
 bin/
 inputs/
+.build/
 *.n
 *~
 *.swp
