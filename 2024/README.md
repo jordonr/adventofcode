@@ -12,7 +12,7 @@ This is my repo for going through the 2024 Advent of Code.
 | Day 04 |  **   | Swift    | Day04.swift |
 | Day 05 |  **   | Swift    | Day05.swift |
 | Day 06 |  **   | Swift    | Day06.swift |
-| Day 07 |     |     |  |
+| Day 07 |  **   | Swift    | Day07.swift |
 | Day 08 |     |     |  |
 | Day 09 |     |     |  |
 | Day 10 |       |          |          |
@@ -38,6 +38,7 @@ This is my repo for going through the 2024 Advent of Code.
 | Day    | Notes  |
 | :----- | :----- |
 | Day 06 | Using recursion, and for part 2 it's really slow |
+| Day 07 | Using recursion, both Part 1 and Part 2 are ugly |
 
 ### Running Swift
 
