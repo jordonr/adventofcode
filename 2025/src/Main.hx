@@ -6,6 +6,7 @@ class Main {
 		// var day:Day01 = new Day01("../inputs/Day01-Test.txt");
 		var day:Day01 = new Day01("../inputs/Day01.txt");
 		#elseif (day == 2)
+		// var day:Day02 = new Day02("../inputs/Day02-Test.txt");
 		var day:Day02 = new Day02("../inputs/Day02.txt");
 		#elseif (day == 3)
 		var day:Day03 = new Day03("../inputs/Day03.txt");
@@ -30,19 +31,7 @@ class Main {
 		// var day:Day11 = new Day11("../inputs/Day11-Test.txt");
 		var day:Day11 = new Day11("../inputs/Day11.txt");
 		#elseif (day == 12)
-		#elseif (day == 13)
-		#elseif (day == 14)
-		#elseif (day == 15)
-		#elseif (day == 16)
-		#elseif (day == 17)
-		#elseif (day == 18)
-		#elseif (day == 19)
-		#elseif (day == 20)
-		#elseif (day == 21)
-		#elseif (day == 22)
-		#elseif (day == 23)
-		#elseif (day == 24)
-		#elseif (day == 25)
+		var day:Day12 = new Day12("../inputs/Day11.txt");
 		#end
 	}
 
