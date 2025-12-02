@@ -7,7 +7,7 @@ This is my repo for going through the 2025 Advent of Code.
 |  Day   | Stars | Language |   File   |
 | :----: | :---: | :------: | :------: |
 | Day 01 |  **   |  Haxe    | Day01.hx |
-| Day 02 |  *    |  Haxe    | Day02.hx |
+| Day 02 |  **   |  Haxe    | Day02.hx |
 | Day 03 |  |   |  |
 | Day 04 |  |   |  |
 | Day 05 |  |   |  |
@@ -23,7 +23,7 @@ This is my repo for going through the 2025 Advent of Code.
 
 | Day    | Notes  |
 | :----- | :----- |
-| Day 02 | I had to use Int64, simple solution, but slow |
+| Day 02 | I had to use Int64, simple brute force solution, but slow |
 
 ### Running Haxe
 
