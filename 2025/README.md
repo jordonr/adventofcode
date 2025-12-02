@@ -6,7 +6,7 @@ This is my repo for going through the 2025 Advent of Code.
 
 |  Day   | Stars | Language |   File   |
 | :----: | :---: | :------: | :------: |
-| Day 01 |  |   |  |
+| Day 01 | * |   |  |
 | Day 02 |  |   |  |
 | Day 03 |  |   |  |
 | Day 04 |  |   |  |

@@ -3,51 +3,41 @@ package days;
 import utils.ReadData;
 
 class Day01 {
+	private var start:Int = 50;
+	private var max:Int = 100;
+
 	public function new(path:String) {
 		var lines:Array<String> = ReadData.getLinesTrimmed(path);
 
-		var numbers = lines.map(function(v) {
-			return Std.parseInt(v);
-		});
-
-		Sys.println('Part 1: ' + partOne(numbers));
-		Sys.println('Part 2: ' + partTwo(numbers));
+		Sys.println('Part 1: ' + partOne(lines));
+		// Sys.println('Part 2: ' + partTwo(numbers));
 	}
 
-	private function partOne(numbers:Array<Int>):Int {
-		var mostCals:Int = 0;
-		var countCals:Int = 0;
+	private function partOne(lines:Array<String>):Int {
+		var current:Int = start;
+		var count:Int = 0;
 		
-		for(l in numbers) {
-			if(l == null) {
-				if(countCals > mostCals) {
-					mostCals = countCals;
-				}
-				
-				countCals = 0;
-			} else {
-				countCals += l;
+		for(l in lines) {
+			var dir = l.substring(0, 1);
+			var clicks = Std.parseInt(l.substring(1, l.length));
+
+			if(dir == "R") {
+				current += clicks;
+			} else if(dir == "L") {
+				current -= clicks;	
+			}
+
+			if(current%100 == 0) {
+				count++;
 			}
 		}
 
-		return mostCals;
+		return count;
 	}
 
 	private function partTwo(numbers:Array<Int>):Int {
 		var countCals:Int = 0;
-		var elfsCals:Array<Int> = [];
 		
-		for(l in numbers) {
-			if(l == null) {
-				elfsCals.push(countCals);
-				countCals = 0;
-			} else {
-				countCals += l;
-			}
-		}
-		
-		elfsCals.sort((a, b) -> b - a);
-
-		return elfsCals[0] + elfsCals[1] + elfsCals[2];
+		return countCals;
 	}
 }

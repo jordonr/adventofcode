@@ -3,8 +3,8 @@ import days.*;
 class Main {
 	public function new() {
 		#if (day == 1)
-		//var day:Day01 = new Day01("../inputs/Day01-Test.txt");
-		 var day:Day01 = new Day01("../inputs/Day01.txt");
+		// var day:Day01 = new Day01("../inputs/Day01-Test.txt");
+		var day:Day01 = new Day01("../inputs/Day01.txt");
 		#elseif (day == 2)
 		var day:Day02 = new Day02("../inputs/Day02.txt");
 		#elseif (day == 3)
