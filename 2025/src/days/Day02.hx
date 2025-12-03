@@ -72,7 +72,6 @@ class Day02 {
 
     private function partTwo(ranges:Array<String>):Int64 {
 		var count:Int64 = 0;
-        // var dups_reg = ~/(?<!\d)(\d+)(?=.*\1)/g;
         var dups_reg = ~/^(.*)\1+$/g;
 		
 		for(r in ranges) {
