@@ -1,5 +1,7 @@
 package days;
 
+import haxe.SysTools;
+using haxe.Int64;
 import utils.ReadData;
 
 class Day03 {
@@ -7,8 +9,8 @@ class Day03 {
 	public function new(path:String) {
 		var lines:Array<String> = ReadData.getLinesTrimmed(path);
 
-		Sys.println('Part 1: ' + partOne(lines));
-		// Sys.println('Part 2: ' + partTwo(lines));
+		// Sys.println('Part 1: ' + partOne(lines));
+		Sys.println('Part 2: ' + partTwo(lines));
 	}
 
 	private function partOne(lines:Array<String>):Int {
@@ -39,10 +41,28 @@ class Day03 {
 		return count;
 	}
 
-	private function partTwo(lines:Array<String>):Int {
-		var count:Int = 0;
+	private function partTwo(lines:Array<String>):Int64 {
+		var count:Int64 = 0;
 		
+        for(l in lines) {
+            var num_list:Array<Int> = l.split("").map(Std.parseInt);
+            var builder:Array<Int> = [];
 
-		return count;
+            for(i in 0...11) {
+                var battery = maxArray(num_list.slice(0, i-11));
+                builder.push(battery);
+                num_list = num_list.slice(num_list.indexOf(battery)+1);
+            }
+            builder.push(maxArray(num_list));
+
+            count += Int64.parseString(builder.join(''));
+        }
+
+        return count;
 	}
+
+    private function maxArray(numbers:Array<Int>):Int {
+        numbers.sort((a, b) -> b - a);
+        return numbers.shift();
+    }
 }
