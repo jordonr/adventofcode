@@ -23,34 +23,53 @@ class Day04 {
 			[1, 1]
 		];
 
-		Sys.println('Part 1: ' + partOne(lines));
-		// Sys.println('Part 2: ' + partTwo(lines));
-	}
-
-	private function partOne(lines:Array<String>):Int {
-		var count:Int = 0;
 		_grid = [];
-		
 		for(l in lines) {
             _grid.push(l.split(""));
 		}
 
 		_height = _grid.length;
 		_width = _grid[0].length;
-		for(y in 0..._height) {
-			for(x in 0..._width) {
-				if(_grid[y][x] == "@" && fourTest(x, y)) {
-					count++;
-				}
-			}
-		}
+
+		Sys.println('Part 1: ' + partOne(lines));
+		Sys.println('Part 2: ' + partTwo(lines));
+	}
+
+	private function partOne(lines:Array<String>):Int {
+		var count:Int = 0;
+		
+		count = removeTp();
 
 		return count;
 	}
 
 	private function partTwo(lines:Array<String>):Int {
 		var count:Int = 0;
+		var prev_count:Int = -1;
+
+		while(count != prev_count) {
+			prev_count = count;
+			count += removeTp(true);
+		}
 		
+		return count;
+	}
+
+	private function removeTp(repalce:Bool = false):Int {
+		var count:Int = 0;
+
+		for(y in 0..._height) {
+			for(x in 0..._width) {
+				if(_grid[y][x] == "@" && fourTest(x, y)) {
+					count++;
+
+					if(repalce) {
+						_grid[y][x] = ".";
+					}
+				}
+			}
+		}
+
 		return count;
 	}
 
