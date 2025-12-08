@@ -1,6 +1,5 @@
 package days;
 
-import haxe.SysTools;
 using haxe.Int64;
 import utils.ReadData;
 

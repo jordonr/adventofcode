@@ -16,4 +16,4 @@ This is my repo for going through the Advent of Code.
 | [2022](https://github.com/jordonr/adventofcode/tree/master/2022) |  12   | Haxe |
 | [2023](https://github.com/jordonr/adventofcode/tree/master/2023) |  17   | Swift |
 | [2024](https://github.com/jordonr/adventofcode/tree/master/2024) |  14   | Swift |
-| [2025](https://github.com/jordonr/adventofcode/tree/master/2025) |   8   | Haxe |
+| [2025](https://github.com/jordonr/adventofcode/tree/master/2025) |   9   | Haxe |
