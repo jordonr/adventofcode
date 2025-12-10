@@ -14,13 +14,13 @@ class Day05 {
         _ranges = [];
         parseInput(input);
 
+        _ranges.sort((a, b) -> Int64.compare(a[0], b[0]));
+
 		Sys.println('Part 1: ' + partOne());
-		// Sys.println('Part 2: ' + partTwo(lines));
 	}
 
 	private function partOne():Int {
 		var count:Int = 0;
-        _ranges.sort((a, b) -> Int64.compare(a[0], b[0]));
 
         for(i in _ids) {
             for(r in _ranges) {
@@ -37,15 +37,6 @@ class Day05 {
             }
 		}
 		
-		return count;
-	}
-
-	private function partTwo(lines:Array<String>):Int {
-		var count:Int = 0;
-		
-		for(i in _ids) {
-		}
-
 		return count;
 	}
 

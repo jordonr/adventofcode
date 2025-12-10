@@ -1,0 +1,5 @@
+-cp src
+--dce std
+-main Main
+--library helder.set
+--cpp bin
