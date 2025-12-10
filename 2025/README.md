@@ -1,4 +1,4 @@
-# Advent of Code 2025 - Solutions in Haxe?!?
+# Advent of Code 2025 - Solutions in Haxe and Swift?!? 
 
 This is my repo for going through the 2025 Advent of Code.
 
@@ -11,7 +11,7 @@ This is my repo for going through the 2025 Advent of Code.
 | Day 03 |  **   |  Haxe    | Day03.hx |
 | Day 04 |  **   |  Haxe    | Day04.hx |
 | Day 05 |  **   | Haxe, Swift | Day05.hx, Day05.swift |
-| Day 06 |  |   |  |
+| Day 06 |  *   | Swift  | Day06.swift |
 | Day 07 |  |   |  |
 | Day 08 |  |   |  |
 | Day 09 |  |   |  |
