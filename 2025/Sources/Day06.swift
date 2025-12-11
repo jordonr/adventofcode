@@ -45,7 +45,7 @@ public class Day06: NSObject {
             tally = tally + total
         }
 
-        print("Day 05, Part 1: \(tally)")
+        print("Day 06, Part 1: \(tally)")
     }
 
     func Part2() {
@@ -96,6 +96,6 @@ public class Day06: NSObject {
             tally = tally + total
         }
 
-        print("Day 05, Part 2: \(tally)")
+        print("Day 06, Part 2: \(tally)")
     }
 }

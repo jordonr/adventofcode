@@ -12,7 +12,7 @@ This is my repo for going through the 2025 Advent of Code.
 | Day 04 |  **   |  Haxe    | Day04.hx |
 | Day 05 |  **   | Haxe, Swift | Day05.hx, Day05.swift |
 | Day 06 |  **   | Swift    | Day06.swift |
-| Day 07 |  |   |  |
+| Day 07 |  *   | Swift    | Day07.swift |
 | Day 08 |  |   |  |
 | Day 09 |  |   |  |
 | Day 10 |  |   |  |
